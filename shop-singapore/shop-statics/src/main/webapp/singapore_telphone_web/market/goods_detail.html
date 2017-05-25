@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Shopping</title>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/commons.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+<div class="header tm">
+    <h4 style="padding-top:15px;text-align:center;color:white;">商品详情</h4>
+    <div class="back" ng-click="back()">返回</div>
+</div>
+<div class="body">
+    <div style="background-color:white;">
+        <div style="width:100%;" ng-repeat="show_item in goods_details_show_pic">
+            <img ng-src="{{show_item}}" width="100%">
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 p" style="font-size:12px;text-align:left;">{{goods.goodsName}}</div>
+                <div class="col-xs-6 p" style="font-size:12px;text-align:left;">￥{{goods.goodsPrice}}</div>
+                <div class="col-xs-6 p" style="font-size:12px;text-align:right;">销量:{{goods.goodsSoldNumber}}</div>
+                <div class="col-xs-12">
+                    <div style="background-color:orange;color:white;border-radius:10px;width:20px;height:20px;line-height:20px;text-align:center;float:right;" ng-click="update_num(1)">+</div>
+                    <div style="float:right;width:40px;text-align:center;height:20px;line-height:20px;">{{shop_number}}</div>
+                    <div style="background-color:orange;color:white;border-radius:10px;width:20px;height:20px;line-height:20px;text-align:center;float:right;" ng-click="update_num(-1)">-</div>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+        </div>
+
+        <img src="images/promise.jpg" width="100%">
+
+        <div style="width:100%;text-align:center;height:44px;line-height:44px;color:#646464;background-color:rgb(247,247,247);margin-top:5px;">
+            图文详情
+        </div>
+
+        <div style="width:100%;" ng-repeat="item in goods.detailPics">
+            <img ng-src="{{item}}" width="100%">
+        </div>
+
+        <div class="container"
+             style="position:fixed;height:45px;left:0px;bottom:0px;right:0px;border:0px solid #fafafa;border-bottom-width:1px;font-size:12px;">
+            <div class="row" style="background-color:white;">
+                <div class="col-xs-5 p" style="height:44px;text-align:center;padding-top:15px;">
+                    价格:￥{{goods_total_price}}
+                </div>
+                <div class="col-xs-4"
+                     style="background-color:red;height:44px;text-align:center;padding-top:13px;color:white;"
+                     ng-click="put_into_cart()">
+                    加入购物车({{shop_cart_number}})
+                </div>
+                <div class="col-xs-3"
+                     style="background-color:orange;height:44px;text-align:center;padding-top:13px;color:white;"
+                     ng-click="buy()">
+                    结算
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/angular.min.js"></script>
+<script src="js/zepto.min.js"></script>
+<script src="js_controller/cart.js"></script>
+<script src="js_controller/api.js"></script>
+<script src="js_controller/goods_detail.js"></script>
+<script src="js/common/toast.js"></script>
+</body>
+</html>

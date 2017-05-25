@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Shopping</title>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/commons.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+<div class="header tm">
+    <h4 style="padding-top:15px;text-align:center;color:white;">我的订单</h4>
+    <div class="back" ng-click="back()">返回</div>
+</div>
+<div class="b" style="bottom:0px;">
+    <div class="body">
+        <div class="container">
+            <div class="row" style="margin-top:10px;background-color:white;padding-bottom:10px;"
+                 ng-repeat="relation in relation_list">
+                <div class="col-xs-9">
+                    <div class="p">订单号:{{relation.userOrder.orderSn}}</div>
+                </div>
+                <div class="col-xs-3">
+                    <div class="p">{{relation.userOrder.orderStatus}}</div>
+                </div>
+
+                <div class="col-xs-12" ng-repeat="item in relation.userOrderDetailsList">
+                    <div class="col-xs-4" style="padding-top:10px;text-align:center;">
+                        <img ng-src="{{item.goodsPic}}" width="100%">
+                    </div>
+                    <div class="col-xs-6" style="font-size:12px;padding-top:13px;">
+                        {{item.goodsName}}
+                        <div class="p" style="padding-left:0px;">￥{{item.goodsPrice}}</div>
+                    </div>
+                    <div class="col-xs-2" style="font-size:12px;padding-top:13px;">
+                        <div style="display:inline-block;">&nbsp;x&nbsp;{{item.num}}</div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12">
+                    <div class="col-xs-6">
+                        <div class="p">总价:￥{{relation.userOrder.orderPrice}}</div>
+                    </div>
+
+                    <div class="col-xs-3">
+                        <!--<div class="p" ng-click="confirm_my_order(relation.userOrder.orderSn)"
+                             style="text-align:right;color:green;font-size:12px;"
+                             ng-show="relation.userOrder.orderStatus == '等待收货' ? true : false">确认收货
+                        </div>-->
+                    </div>
+
+                    <div class="col-xs-3">
+                        <div class="p" ng-click="query_order_detail(relation.userOrder.orderSn)"
+                             style="text-align:right;color:green;font-size:12px;">查看详情
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/angular.min.js"></script>
+<script src="js/zepto.min.js"></script>
+<script src="js_controller/cart.js"></script>
+<script src="js_controller/api.js"></script>
+<script src="js_controller/my_order.js"></script>
+<script src="js/common/toast.js"></script>
+</body>
+</html>

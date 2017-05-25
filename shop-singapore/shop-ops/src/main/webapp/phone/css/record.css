@@ -1,0 +1,90 @@
+/*
+* @description: 还款纪录的样式.
+* @author: 周日恒
+* @update: 周日恒 (2015-10-18 15:00)
+*/
+.header-left-doctor {
+    background-color: #FFFFFF;
+    float: left;
+    width: 8.8333333333rem;
+    height: 3.3333333333rem;
+    line-height: 3.3333333333rem;
+    text-align: center;
+    color: #404040;
+    position: relative;
+}
+
+.header-divide-line-doctor {
+    float: left;
+    height: 1.25rem;
+    margin-top: 1.04166666666rem;
+    width: 0.0833333333rem;
+    background-color: #e5e5e5;
+}
+.box{
+   margin: 0 0 0 2rem;
+    position: relative;
+}
+.box img{
+    position: relative;
+    display:block;
+    width: 1rem;
+    height: 1.0833333333rem;
+}
+.red-line{
+    margin: 0 0 0 0.4166666666rem;
+    border-left: 0.1666666666rem solid #fd7091;
+    position: relative;
+    top:0;
+}
+.time{
+    background-color: #fd7091;
+    color: #fff;
+    width:6.25rem;
+    height: 1.6666666666rem;
+    line-height: 1.6666666666rem;
+    text-align: center;
+    border-radius: 4px;
+    position: absolute;
+    top:0;
+    left: 1.8333333333rem;
+}
+.record-box{
+    margin-left: 1.25rem;
+    width: 17.4166666666rem;
+    height: 10.0833333333rem;
+    border: 1px solid #999999;
+}
+.record-box img{
+    width: 3.625rem;
+    height: 3.625rem;
+}
+.record-box p{
+    width: 12.5rem;
+}
+.record-box p:nth-child(1){
+    margin: 0.83333333333rem 0 0.83333333333rem 0.83333333333rem;
+}
+.record-box p:nth-child(3){
+    float: left;
+    margin: 0.4166666666rem 0 1.5833333333rem 0.83333333333rem;
+}
+.record-box p:nth-child(4){
+    color: #ff517a;
+    float: left;
+    margin: 0 0 0.4166666666rem 0.83333333333rem;
+}
+.record-box img {
+
+    margin: 0.2916666666rem 0;
+}
+.line-heiht-20px{
+    height: 1rem;
+    clear: both;
+    width: 100%;
+}
+.line-heiht-10px{
+    height: 0.4166666666rem;
+    clear: both;
+    width: 100%;
+}

@@ -1,0 +1,460 @@
+/*
+* @description: 鐧婚檰娉ㄥ唽鐨勬牱寮�
+* @author: 鍛ㄦ棩鎭�
+* @update: 鍛ㄦ棩鎭� (2015-10-21 18:32)
+*/
+input{
+    -webkit-appearance: none;
+    border-radius: 0;
+    outline: none;
+}
+body{
+    background-color: #ebeced;
+}
+.login-box{
+    background-color: #fff;
+    height: 8.8333333333rem;
+    border-left: 1.6666666666rem solid #fff;
+}
+.login-box div:nth-child(1){
+    font-size:1.25rem ;
+    float: left;
+    margin: 1.625rem 0.8333333333rem 0 0;
+}
+.login-box div:nth-child(4){
+    font-size:1.25rem ;
+    float: left;
+    margin: 1.625rem 2.0833333333rem 0 0;
+}
+
+.login-box input{
+    width: 12rem;
+    font-size: 1rem;
+    height: 1.2rem;
+    margin: 1.625rem 0 1.625rem 0;
+}
+.forget-pass{
+    height: 1rem;
+    margin: 0.8333333333rem 0 1.6666666666rem 1.6666666666rem ;
+    color: #ff517a;
+}
+.forget-pass a:nth-child(2){
+    float: right;
+    margin-right: 1.6666666666rem;
+}
+button{
+    border-radius: 4px;
+    width: 23.3333333333rem;
+    height: 3.3333333333rem;
+    margin: 0.75rem 0 0.75rem 1.6666666666rem;
+    background-color: #ff517a;
+    color:#fff;
+    padding:0;
+    border:0;
+    font-size:1.25rem ;
+}
+.register-box{
+    float: left;
+    background-color: #fff;
+    width: 25rem;
+    border-left: 1.6666666666rem solid #fff;
+}
+
+.register-box div {
+    line-height: 1.25rem;
+    color: #404040;
+    font-size: 1.25rem;
+}
+.register-box div:nth-child(1){
+    float: left;
+    margin: 1.625rem 0.8333333333rem 0 0;
+}
+.register-box div:nth-child(4){
+    float: left;
+    margin: 1.625rem 0.8333333333rem 0 0;
+}
+.register-box div:nth-child(6){
+    height: 4.375rem;
+    line-height: 4.375rem;
+    text-align: center;
+    width: 7.5rem;
+    float: left;
+}
+.register-box-border-left{
+    border-left: 1px solid #ebeced;
+}
+.register-box div:nth-child(8){
+    float: left;
+    margin: 1.625rem 0.8333333333rem 0 0;
+}
+.register-box div:nth-child(11){
+    line-height: 1.25rem;
+    font-size:1.25rem ;
+    float: left;
+    margin: 1.625rem 0.8333333333rem 0 0;
+}
+.register-box div:nth-child(15){
+    font-size:1.25rem ;
+    float: left;
+    margin: 1.625rem 0.8333333333rem 0 0;
+}
+.register-box input{
+    width: 12rem;
+    font-size: 1rem;
+    height: 1.2rem;
+    margin: 1.625rem 0 1.625rem 0;
+    float: left;
+}
+.setuser-box{
+    height: 10rem;
+    background-color: #fff;
+    border-left: 1.6666666666rem solid #fff;
+}
+.setuser-box div:nth-child(1){
+    font-size:1.25rem ;
+    float: left;
+    margin: 1.625rem 0 2rem 0 ;
+}
+.setuser-box div:nth-child(2){
+    position: relative;
+    font-size:1.25rem ;
+    float: right;
+    margin: 0 9.5rem 0 0 ;
+    width: 3.3333333333rem;
+}
+.setuser-box div:nth-child(4){
+    font-size:1.25rem ;
+    float: left;
+    margin: 1.6666666666rem 0 0 0;
+}
+.arrows{
+    width: 1rem;
+    height: 1rem;
+    float: right;
+    margin: 1.7916666666rem 0.8333333333rem;
+}
+.arrows span{
+    position: absolute;
+    display: block;
+    width: 0.8rem;
+    height: 0.8rem;
+    border-style: solid;
+    border-color: #ebeced;
+    border-width: 4px 0 0 4px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/*.setuser-box input{*/
+    /*width: 12rem;*/
+    /*font-size: 1rem;*/
+    /*height: 1.2rem;*/
+    /*margin: 1.625rem 0 1.625rem 0;*/
+/*}*/
+.user-head-portrait{
+    background: url(../imgs/setuser/head.png);
+    background-size: 3.33333333rem 3.33333333rem;
+    height: 3.33333333rem;
+    width:3.33333333rem;
+    /*border-radius: 100%;*/
+    margin: 0.9583333333rem 0 0.9583333333rem 0;
+    float: right;
+}
+.head-input{
+    position: absolute;
+    top:0;
+    left: 0;
+    height: 3.33333333rem;
+    width:3.33333333rem;
+    opacity: 0;
+    margin: 0.9583333333rem 0 0.9583333333rem 0;
+}
+.name-vb{
+    width: 5rem;
+    font-size: 1rem;
+    float:right;
+    margin: 1.75rem 3.25rem 1.75rem 0;
+}
+.div-out-login{
+    background-color: #fff;
+    width: 100%;
+    text-align: center;
+    height: 4.5833333333rem;
+    line-height: 4.5833333333rem;
+}
+.div-out-login:hover{
+    background-color: #ccc;
+}
+.readme{
+    line-height: 3rem;
+    font-size: 1rem;
+    color: #999;
+    padding-left: 1.6666666666rem;
+    margin-bottom: 0.5rem;
+}
+.readme input{
+    height: 1rem;
+    width: 1rem;
+    border: 1px solid #ff517a;
+    margin: 0;
+    border-radius: 1px;
+    background-color: #fff;
+    position: relative;
+    top:0.0833333333rem;
+}
+.readme input[type=checkbox]:checked{
+    background: url(../img/base/form-select_small.png) no-repeat center center;
+    background-size:  1rem  1rem;
+}
+.proof{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10.9583333333rem;
+    height: 6.5833333333rem;
+    opacity: 0;
+}
+/*淇濆瓨浠ュ悗浣跨敤
+.eval-pic{
+    position: relative;
+    width: 21.666666666rem;
+    height: 12.25rem;
+    border: 0.0833333333333rem dashed #b3b3b3;
+}
+.eval-pic img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}*/
+.eval-pic{
+    position: relative;
+    width: 10.9583333333rem;
+    height: 6.5833333333rem;
+    border: 0.0833333333333rem dashed #b3b3b3;
+}
+.eval-pic img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.up-body{
+    position: relative;
+    float: left;
+    margin-left: 1.25rem;
+    margin-top: 1.25rem;
+}
+/*淇濆瓨
+.explain{
+    margin-top: 5.625rem;
+    width: 100%;
+    text-align: center;
+    font-size:1.25rem;
+    color:#b3b3b3;
+    height: 1.25rem;
+}*/
+.explain{
+    margin-top: 2.25rem;
+    width: 100%;
+    text-align: center;
+    font-size:2.0833333333rem;
+    color:#b3b3b3;
+    height: 2.0833333333rem;
+}
+.szf-wz{
+    float:left;
+    height: 3rem;
+    width: 100%;
+}
+.szf-wz p:nth-child(1){
+    margin-top: 0.8333333333rem;
+    margin-left: 3.5rem;
+    float:left;
+    width: 6rem;
+    text-align: center;
+}
+.szf-wz p:nth-child(2){
+    margin-top: 0.8333333333rem;
+    margin-right: 4.5rem;
+    float: right;
+}
+.font-size-30px{
+    color: #404040;
+    font-size: 1.25rem;
+    height: 1.25rem;
+}
+.up-img{
+    float: left;
+    background-color: #fff;
+    width: 100%;
+}
+.DBsubmit{
+    background-color: #68c316;
+}
+.order-box{
+    position: relative;
+    float: left;
+    width: 24.083333333333rem;
+    height: 9.208333333333rem;
+    color:#666;
+    margin-left: 0.83333333333rem;
+    margin-bottom: 0.4166666666rem;
+}
+.order-box p{
+    width: 20rem;
+    height: 0.8333333333rem;
+    font-size:  0.8333333333rem;;
+    float: left;
+    margin:1rem 0 0 0.6666666666rem;
+}
+.order-box p span{
+    color:#ff517a;
+}
+.order-box p:nth-child(1){
+    float: left;
+    margin-top:0.666666666rem;
+}
+.order-text{
+    height: 4.1666666666rem;
+    font-size: 1.25rem;
+    line-height: 4.1666666666rem;
+    margin-left: 0.8333333333rem;
+}
+/*娌℃湁鏁板瓧鐨勫崟閫夋鏍峰紡*/
+.radio-boxFour {
+    float: left;
+    width: 1.5833333333rem;
+    height: 1.5833333333rem;
+    background: #FFFFFF;
+    margin: 1.0833333333rem 0.8333333333rem;
+    /*-webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.5);*/
+    /*-moz-box-shadow: 0px 1px 3px rgba(0,0,0,0.5);*/
+    /*box-shadow: 0px 1px 3px rgba(0,0,0,0.5);*/
+}
+.radio-boxFour label {
+    opacity: 0;
+    display: block;
+    width: 1.5833333333rem;
+    height: 1.5833333333rem;
+    border-radius: 100px;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    transition: all .5s ease;
+    cursor: pointer;
+    position: absolute;
+    top: 0; /*璁板綍涓�涓嬪洜涓哄湪radio涓嬫湁涓�涓竟妗嗕负2px鐨刣iv鎵�浠ヤ笂瀹氫綅radio璺濈top鍜宭eft鐨勬椂鍊欒鍔犱笂杩�2px*/
+    left: 0;
+    z-index: 1;
+    background: #ddd;
+    /*-webkit-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);*/
+    /*-moz-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);*/
+    /*box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);*/
+}
+.radio-boxFour label span{
+    top: 0.1666666666rem;
+    left:0.5rem;
+    position: absolute;
+    display: block;
+    width: 0.5rem;
+    height: 1rem;
+    border-style: solid;
+    border-color: #FFFFFF;
+    border-width: 2px 0 0 2px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+.radio-boxFour input{
+    position: absolute;
+    width: 24.083333333333rem;
+    height: 9.208333333333rem;
+    top:-3.83333333333rem;
+    left: -20.8333333333rem;
+}
+.radio-boxFour input[type="radio"]:checked + label {
+    background: #ff517a;
+    opacity: 1;
+}
+.radio-boxFour input[type="radio"]:checked ~ div {
+    border: 0.08333333333rem solid #ff517a;
+}
+.radio-boxFour input[type="radio"] {
+    visibility: hidden;
+}
+.radio-boxFour .radio-box-style{
+    position: absolute;
+    width: 1.416666666666rem;
+    height: 1.416666666666rem;
+    top:0;
+    left: 0;
+    border: 0.08333333333rem solid #cccccc;
+    border-radius: 100%;
+}
+.radio-boxFour .order-box-style{
+    position: absolute;
+    width: 24.083333333333rem;
+    height: 9.208333333333rem;
+    top: -3.83333333333rem;
+    left: -20.8333333333rem;
+    border: 0.08333333333rem solid #cccccc;
+}
+/*娌℃湁鏁板瓧鐨勫崟閫夋鏍峰紡-end*/
+.abs-t92px-r20px{
+    position: absolute;
+    top:2.75rem;
+    right: 0.83333333333rem;
+}
+
+.good img{
+    top: 4.1666666666rem;
+    left:9.5833333333rem;
+    position: relative;
+    width: 7.5rem;
+    height: 7.5rem;
+}
+.good p:nth-child(2){
+    font-size: 1.25rem;
+    position: absolute;
+    top:12.75rem;
+    left: 9.6666666666rem;
+}
+.good p:nth-child(3){
+    text-align: center;
+    width: 7.5rem;
+    font-size: 1.25rem;
+    position: absolute;
+    top:15.3333333333rem;
+    left: 9.6666666666rem;
+}
+.good a div{
+    text-align: center;
+    width: 10rem;
+    font-size: 1.25rem;
+    height: 3.3333333333rem;
+    line-height: 3.3333333333rem;
+    position: absolute;
+    top:17.5833333333rem;
+    left: 8.3333333333rem;
+    background-color: #b3b3b3;
+    color:#fff;
+}
+.money-sumber {
+    margin: 0.8333333333rem 0 0 1.666666666rem;
+    color: #ff2d5f;
+}
+.code-text {
+    font-size: 1.25rem;
+    float: left;
+    margin: 1.625rem 0.8333333333rem 0 0;
+}
+.code {
+    font-size: 1.25rem;
+    height: 4.375rem;
+    line-height: 4.375rem;
+    text-align: center;
+    width: 7.5rem;
+    float: left;
+}

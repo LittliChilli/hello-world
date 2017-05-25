@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Shopping</title>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/commons.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+<div class="b">
+    <div class="h tm">
+        <h4 style="padding-top:15px;text-align:center;color:white;">我的</h4>
+    </div>
+    <div class="b_b">
+        <div class="me tm">
+            <div style="position:absolute;width:100px;">
+                <img ng-src="http://cfvwj.img48.wal8.com/img48/559633_20161018141047/147677597835.png"
+                     height="60"
+                     style="margin-top:20px; margin-left:20px;border-radius:30px;">
+            </div>
+            <div style="position:absolute;left:100px;top:0px;right:0px;height:100px;padding-top:40px;color:white;"
+                 ng-show="!isLogin" ng-click="login()">
+                点击登录 / 注册
+            </div>
+            <div style="position:absolute;left:100px;top:0px;right:0px;height:100px;padding-top:40px;color:white;"
+                 ng-show="isLogin">
+                {{user_name}}
+            </div>
+        </div>
+        <div class="me_i" style="margin-top:10px;" ng-click="my_orders()">
+            全部订单
+        </div>
+        <div class="col-xs-12"
+             style="background-color:white;width:100%;border-top:0.5px;border-bottom: 0px;border-left:0px;border-right:0px;border-style:solid;border-color:#DDDDDD;"></div>
+
+        <div style="background-color:white;height: 70px;padding-top: 12px;padding-left: 12px;font-size: 14px;">
+            <div class="col-xs-4" style="width: 30%;padding: 0px" ng-click="goto_order_list('buying')">
+                <img src="images/wait.png"
+                     style="position: absolute;right: 22px;height: 4.7rem;padding-top: .3rem;padding-bottom: .3rem;width: auto;">
+                <div style="position: absolute;right: 18px;top: 0;font-weight: bold;background: #FD657A;border-radius: 100%;height: 1.5rem;width: 1.5rem;line-height: 1.5rem;color: #fff;text-align: center;">
+                    {{order_buying_num}}
+                </div>
+            </div>
+            <div class="col-xs-4" style="width: 30%;padding: 0px" ng-click="goto_order_list('alreadyBuy')">
+                <img src="images/not.png"
+                     style="position: absolute;right: 22px;height: 4.7rem;padding-top: .3rem;padding-bottom: .3rem;width: auto;">
+                <div style="position: absolute;right: 18px;top: 0;font-weight: bold;background: #FD657A;border-radius: 100%;height: 1.5rem;width: 1.5rem;line-height: 1.5rem;color: #fff;text-align: center;">
+                    {{order_alreadyBuy_num}}
+                </div>
+            </div>
+            <div class="col-xs-4" style="width: 30%;padding: 0px" ng-click="goto_order_list('confirmReceived')">
+                <img src="images/already.png"
+                     style="position: absolute;right: 22px;height: 4.7rem;padding-top: .3rem;padding-bottom: .3rem;width: auto;">
+                <div style="position: absolute;right: 18px;top: 0;font-weight: bold;background: #FD657A;border-radius: 100%;height: 1.5rem;width: 1.5rem;line-height: 1.5rem;color: #fff;text-align: center;">
+                    {{order_confirmReceived_num}}
+                </div>
+            </div>
+        </div>
+
+        <div class="me_i" style="margin-top:20px;" ng-click="manager_addresses()">
+            地址管理
+        </div>
+
+        <div class="me_i" ng-click="my_team_group()">
+            我的拼团
+        </div>
+
+        <div class="me_i" ng-click="callMmfq()">
+            <div style="float:left;"> 联系客服</div>
+            <div style="float:right;">400-711-8898</div>
+        </div>
+
+        <div class="me_i" ng-click="callMmfq()"
+             style="color: #bababa;margin-top: 1rem;margin-bottom: .5rem;padding-bottom: 4.8rem;border-top: 1px solid #e6e6e6;border-bottom: 1px solid #e6e6e6">
+            <div class="col-xs-5 text-right" style="width: 32%">
+                <img src="images/call.png"
+                     style="width: 2.4rem;height: 2.4rem;margin-top: .5rem;padding-right: 0">
+            </div>
+            <div class="col-xs-7 text-left" style="padding-left:0;">
+                <div style="line-height: 2.2rem;font-family: Arial;font-size: 1.1rem;margin-left: .5rem">
+                    联系客服:400-711-8898
+                </div>
+                <div style="line-height: 1.2rem;font-size: .8rem">
+                    工作日:9:00-21:00 周末:10:00-17:00
+                </div>
+            </div>
+        </div>
+
+
+        <div class="btn btn-danger" style="width:80%;margin:0 auto;margin-top:25px;text-align:center;display:block;"
+             ng-click="login_out()" ng-show="isLogin">
+            退出登录
+        </div>
+    </div>
+</div>
+
+<div class="f">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-3" style="padding-top: 5px;text-align: center;">
+                <a href="index.html">
+                    <img ng-src="images/index.png" height="45">
+                </a>
+            </div>
+            <div class="col-xs-3" style="padding-top: 5px;text-align: center;">
+                <a href="shopping_cart.html">
+                    <img ng-src="images/shopping_cart.png" height="45">
+                </a>
+                <div class="bubble" ng-show="is_show_cart_number">
+                    {{shop_cart_number}}
+                </div>
+            </div>
+            <div class="col-xs-3" style="padding-top: 5px;text-align: center;">
+                <a href="/static/singapore_telphone_web/market/modules/team_group/team_index.html">
+                    <img ng-src="images/open_group.png" height="45">
+                </a>
+            </div>
+            <div class="col-xs-3" style="padding-top: 5px;text-align: center;">
+                <a href="my.html">
+                    <img ng-src="images/my_s.png" height="45">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/angular.min.js"></script>
+<script src="js/zepto.min.js"></script>
+<script src="js_controller/cart.js"></script>
+<script src="js_controller/api.js"></script>
+<script src="js_controller/my.js"></script>
+<script src="js/common/toast.js"></script>
+</body>
+</html>

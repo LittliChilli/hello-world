@@ -1,0 +1,95 @@
+body{
+    background-color: #f2f2f2;
+}
+.line-1px-e5e5e5{
+    background-color: #e5e5e5;
+    width:100%;
+    height:1px;
+    clear: both;
+}
+.select-title{
+    line-height: 1rem;
+    margin: 0 0 0.66666666666666rem 0;
+}
+.box-title-mar{
+    margin: 0.66666666666666rem 0 0.66666666666666rem 0.66666666666666rem;
+}
+.front-color-999{
+    color: #999;
+}.front-color-666{
+    font-size: 1.0833333333rem;
+    color: #666;
+}
+.position—box{
+    background-color: #fff;
+    width:100%;
+    margin: 0.8333333333rem 0 0.666666666666rem 0;
+}
+.position—box .position—city{
+    line-height: 3.33333333333rem;
+    height: 3.33333333333rem;
+}
+.position—box .position—city span{
+    margin-left: 0.8333333333rem;
+    color: #ff517a;
+}
+/*没有数字的单选框样式*/
+.radio-select-money{
+    -webkit-border-radius: 0.83333333333rem;
+    -moz-border-radius: 0.83333333333rem;
+    border-radius: 0.83333333333rem;
+    margin-right: 1.6rem;
+    float: left;
+    width: 4.91666666666rem;
+    height: 3.25rem;
+    background: #FFFFFF;
+    margin-bottom:0.8333333333rem;
+    position: relative;
+}
+.radio-select-money label {
+    -webkit-border-radius: 0.83333333333rem;
+    -moz-border-radius: 0.83333333333rem;
+    border-radius: 0.83333333333rem;
+    display: block;
+    width: 4.91666666666rem;
+    text-align: center;
+    height: 3.25rem;
+    line-height:3.25rem;
+    cursor: pointer;
+    position: absolute;
+    top: 0; /*记录一下因为在radio下有一个边框为2px的div所以上定位radio距离top和left的时候要加上这2px*/
+    left: 0;
+    z-index: 1;
+}
+.radio-select-money input{
+    color:#999;
+    text-align: center;
+    font-size: 1rem;
+    margin: 0.08333333333rem 0 0  0.08333333333rem;;
+    width: 100%;
+    height: 100%;
+}
+.radio-select-money input:nth-last-child(1){
+    color: #666;
+    position: absolute;
+    width: 100%;
+    height:100%;
+    line-height: 1rem;
+    z-index: 2;
+    top:0;
+}
+.radio-select-money input[type="radio"]{
+    visibility: hidden;
+}
+.radio-select-money .radio-box-style{
+    -webkit-border-radius: 0.83333333333rem;
+    -moz-border-radius: 0.83333333333rem;
+    border-radius: 0.83333333333rem;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    border:0.08333333333rem solid #cccccc;
+}
+/*没有数字的单选框样式-end*/

@@ -1,0 +1,435 @@
+/*
+* @description: 首页的样式.
+* @author: 周日恒
+* @update: 周日恒 (2015-10-16 18:32)
+*/
+input:-moz-placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.so-back {
+    width: 100%;
+    height: 3.6666666666rem;
+    position: relative;
+    background-color: #ff517a;
+}
+
+.input_div {
+    position: relative;
+    background-color: #f24e74;
+    bottom: 0;
+    border-radius: 1.25rem;
+    top: 0.5833333333rem;
+    left: 5.5333333333rem;
+    width: 17.5rem;
+    height: 2.5rem;
+}
+
+.input_div .login_input.code {
+    color: rgba(255, 255, 255, 1);
+    background: no-repeat 10px center;
+    background-size: 1.5rem 1.5rem;
+}
+
+.input_div .login_input {
+    border-radius: 1.25rem;
+    font-size: 1.16666666666rem;
+    padding-left: 3rem;
+    width: 14.833333333rem;
+    border: hidden;
+    height: 2.5rem;
+}
+
+.input_div img {
+    width: 1.083333333333rem;
+    position: absolute;
+    top: 0.70833333333rem;
+    left: 1.25rem;
+}
+
+.swipe_wrap {
+    background: #FFFFFF;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.swipe-img {
+    position: relative;
+    width: 100%;
+    padding-top: 10rem;
+}
+
+#J-slider,
+#J-slider li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100%;
+    visibility: visible;
+}
+
+#J-slider li a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+#j-pointers {
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    margin: 0 auto;
+    height: 20px;
+    line-height: 20px;
+}
+
+#j-pointers i {
+    display: inline-block;
+    margin-left: 4px;
+    width: 10px;
+    height: 10px;
+    background: #ccc;
+    border-radius: 6px;
+    /*opacity: .5;*/
+}
+
+#j-pointers i:first-child {
+    margin-left: 0;
+}
+
+#j-pointers i.active {
+    background-color: #ff517a;
+}
+
+.item-ico-width {
+    /*width: 20rem;*/
+    width: 26.666666666rem;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.wrap {
+    width: 26.666666666rem;
+    height: 6.4583333333rem;
+    overflow: hidden;
+}
+
+.navigation-bars-background {
+    width: 26.666666666rem; /*每增加一个项目,宽度增加7rem,基础的宽度为width: 26.666666666rem;*/
+    background-color: #ffffff;
+    height: 6.4583333333rem;
+}
+
+.navigation-bars-background div {
+    float: left;
+    margin: 0.8333333333rem 0 0.5rem 3.666666666rem;
+    width: 3.3333333333rem;
+    height: 3.3333333333rem;
+    position: relative;
+}
+
+.navigation-bars-background div:nth-child(1) {
+    margin-left: 1.25rem;
+}
+
+.navigation-bars-background div img {
+    width: 100%;
+}
+
+.navigation-bars-background .Tooltip-Text {
+    width: 4.3333333333rem;
+    height: 1rem;
+    text-align: center;
+    margin: 0.3rem 0 0 0;
+    position: absolute;
+    left: -0.5rem;
+}
+
+.line-82px {
+    width: 25rem;
+    height: 3.416666666rem;
+    line-height: 3.4166666666rem;
+    padding-left: 0.8333333333rem;
+    color: #848484;
+}
+.line-82px img{
+    float: left;
+    display: block;
+    margin: 1.08333333333rem 0.8333333333333rem 0 0;
+    width: 1rem;
+}
+.item {
+    float: left;
+    width: 25.8333333333rem;
+    height: 20rem;
+    margin:  0.83333333333rem 0.4166666666rem;
+    background-color: #FFFFFF;
+}
+
+.item .item-img {
+    position: relative;
+    float: left;
+    margin: 0 0  0.83333333333rem 0.4166666666rem;
+    width: 25rem;
+    height: 12.5rem;
+
+}
+.number-of-travelers{
+    border-top-left-radius: 0.16666666666rem;
+    border-bottom-left-radius: 0.16666666666rem;
+    position: absolute;
+    bottom:0;
+    right:0;
+    width:6.4166666666rem;
+    height: 2rem;
+    line-height: 2rem;
+    text-align:center;
+    color: rgba(255,255,255,1);
+}
+.shadow-box{
+    border-top-left-radius: 0.16666666666rem;
+    border-bottom-left-radius: 0.16666666666rem;
+    position: absolute;
+    bottom:0;
+    right:0;
+    width:6.4166666666rem;
+    height: 2rem;
+    background:rgba(0,0,0,.5);
+}
+.item .item-img img {
+    width: 100%;
+    height: 100%;
+}
+
+.item .item-text {
+    position: relative;
+    float: left;
+    height: 7.8333333333rem;
+    width: 25rem;
+    margin: 0 0 0 0.4166666666rem;
+}
+
+.item .item-text>p:nth-child(1) {
+    line-height: 1.25rem;
+    font-size: 1.25rem;
+    margin-bottom: 0.6666666666rem;
+    color: #666;
+}
+
+.item .item-text>p:nth-child(2) {
+    line-height: 1.0833333333rem;
+    font-size: 1.0833333333rem;
+    margin-bottom: 0.6666666666rem;
+    width: 100%;
+    color: #999;
+}
+.item .item-text>div:nth-child(3) {
+    line-height: 3.5rem;
+    position: absolute;
+    left:-0.83333333333rem;
+    background-color: #ff517a;
+    height: 3.08333333333rem;
+    width: 20.0833333333333rem;
+    border-bottom-right-radius: 1.54166666666rem;
+    border-top-right-radius: 1.54166666666rem;
+}
+.item .item-text>div:nth-child(3) span,
+.item .item-text>div:nth-child(3) del
+{
+    color: #ffffff;
+}
+.item .item-text>div:nth-child(3) span:first-child
+{
+   margin-left: 0.83333333rem;
+}
+.item .item-text>div:nth-child(3) span:nth-child(2)
+{
+    font-size: 2rem;
+}
+.item .item-text>div:nth-child(3) span:nth-child(3)
+{
+    font-size: 1.25rem;
+}
+.item .item-text>div:nth-child(3) span:nth-child(4)
+{
+    font-size: 1.25rem;
+}
+.item .item-text>div:nth-child(3) del:nth-child(5)
+{
+    margin-left: 1rem;
+    font-size: 1.25rem;
+}
+
+.item .item-text>div:nth-child(4) {
+    color:#fff;
+    text-align: center;
+    line-height: 3.08333333333rem;
+    position: absolute;
+    right:-0.8333333333rem;
+    background-color: #ff194f;
+    height: 3.08333333333rem;
+    width: 5.75rem;
+    border-bottom-left-radius: 1.54166666666rem;
+    border-top-left-radius: 1.54166666666rem;
+}
+
+.item .item-text div p:nth-child(1) {
+    float: left;
+    color: #ff517a;
+    font-size: 1.25rem;
+    right: 1.25rem;
+    margin-bottom: 0.1rem;
+}
+
+.item .item-text div p:nth-child(1) span {
+    font-size: 1rem;
+    height: 1rem;
+}
+
+.item .item-text div p:nth-child(1) b {
+    position: relative;
+    top: 0.12rem;
+}
+
+.item .item-text div p:nth-child(2) {
+    color: #ff517a;
+    float: left;
+    font-size: 1rem;
+    margin: 0;
+    width: 5rem;
+    line-height: 2rem;
+    height: 2rem;
+    text-align: center;
+    border: 1px solid #ff517a;
+    border-radius: 4px;
+    position: absolute;
+    top: 4.5rem;
+    left: 14.416666666rem;
+}
+
+.item .item-text div p:nth-child(3) {
+    height: 1rem;
+    position: absolute;
+    top: 5rem;
+    left: 20rem;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+.new-box {
+    height: 6.25rem;
+    width: 100%;
+    background-color: #FFFFFF;
+}
+
+.new-box div {
+    float: left;
+}
+
+.new-box div img {
+    margin: 1.25rem 0.416666666666rem 0 0.75rem;
+    width: 3.75rem;
+    height: 3.75rem;
+    float: left;
+}
+
+.new-box div p:nth-child(2) {
+    margin-top: 1.25rem;
+    font-size: 1.25rem;
+    height: 1.25rem;
+}
+
+.new-box div p {
+    float: left;
+}
+
+.new-box div p:nth-child(3) {
+    margin-top: 1.6666666666rem;
+}
+
+.new-box div:nth-child(1) {
+    width: 13.2916666666rem;
+    height: 6.25rem;
+}
+
+.new-box div:nth-child(2) {
+    width: 0.0833333333rem;
+    height: 6.25rem;
+    background-color: #ebeced;
+}
+
+.new-box div:nth-child(3) {
+    width: 13.2916666666rem;
+    height: 6.25rem;
+}
+
+.city {
+    color: #FFFFFF;
+    top: 0.8333333333rem;
+    left: 0.8333333333rem;
+    font-size: 1.25rem;
+    position: absolute;
+    line-height: 2rem;
+    height: 2rem;
+    z-index: 9;
+}
+
+.city img {
+    float: left;
+    width: 0.9166666666rem;
+    height: 1.16666666666rem;
+    margin: 0.4166666666666rem 0.416666666666rem 0 0.75rem;
+}
+
+.city span:nth-child(1) {
+    font-size: 1.1666666666rem;
+    margin-right: 0.41666666666rem;
+    float: left;
+}
+
+.city span:last-child {
+    margin-top: 0.416666666666rem;
+    float: left;
+    display: block;
+    width: 0.83333333333rem;
+    height: 0.8333333333rem;
+    border-style: solid;
+    border-width: 2px 0 0 2px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.city-shadow {
+    width: 6.6666666666rem;
+    height: 2rem;
+    background-color: rgba(0, 0, 0, .6);
+    top: 0.8333333333rem;
+    left: 0.8333333333rem;
+    font-size: 1.25rem;
+    position: absolute;
+    line-height: 2rem;
+    z-index: 8;
+    border-radius: 1rem;
+}
+
+.so-clea {
+    position: absolute;
+    top: 1.2rem;
+    right: 0.8333333333rem;
+    color: rgba(255, 255, 255, 1)
+}

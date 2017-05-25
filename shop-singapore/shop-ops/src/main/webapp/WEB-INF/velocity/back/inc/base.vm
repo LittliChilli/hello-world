@@ -1,0 +1,51 @@
+## 静态文件版本控制
+#set($staticVersion="20130823")
+#set($topicDashaiControl="off")
+#set($joinTopicControl="off")
+
+#set($staticPath="/static")
+#set($assertPath="/static/masserts/miao")
+#set($assertPath_phone="/phone")
+#set($mmfqFile="/static/mmfqfile")
+
+#set($blank="http://static.mmfenqi.com/easyui/themes/icons/blank.gif")
+
+#set($goodsPath="/static/imgs/goods")
+#set($indexPath="/static/imgs/index")
+#set($footerPath="/static/imgs/footer")
+
+#set($opsPath="/ops")
+#set($mmfqStaticHost="http://www.mmfenqi.com")
+##set($mmfqStaticHost="http://pro.mmfenqi.com")
+#set($adminAuthInfo=$session.getAttribute('adminAuth'))
+#set($loginAdmin=$session.getAttribute('loginAdmin'))
+
+## some common constants, add by xf
+#set($contextPath=$request.getContextPath())
+#set($loginUser=$session.getAttribute('loginUser'))
+
+#set($noAvatar30="http://static.guang.com/imgs/user/photo/avatar-30.png")    ## 无头像用户的默认头像 30x30
+#set($noAvatar50="http://static.guang.com/imgs/user/photo/avatar-50.png")    ## 无头像用户的默认头像 50x50
+#set($noAvatar80="http://static.guang.com/imgs/user/photo/avatar-80.png")    ## 无头像用户的默认头像 80x80
+#set($noAvatar180="http://static.guang.com/imgs/user/photo/avatar-180.png")    ## 无头像用户的默认头像 180x180
+
+#if("$!menu" == "index")
+    #set($keywords="")
+    #set($title="美眉分期")
+    #set($logoh2="美眉分期")
+    #set($sharetext="美眉分期")
+#end
+
+#if("$!menu" == "goods")
+    #set($keywords="")
+    #set($title="美眉分期")
+    #set($logoh2="美眉分期")
+    #set($sharetext="美眉分期")
+#end
+
+#if("$!menu" == "user")
+    #set($keywords="")
+    #set($title="美眉分期")
+    #set($logoh2="美眉分期")
+    #set($sharetext="美眉分期")
+#end

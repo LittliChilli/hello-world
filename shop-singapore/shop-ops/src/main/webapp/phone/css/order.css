@@ -1,0 +1,125 @@
+/*
+* @description: 璁㈠崟鐨勬牱寮�
+* @author: 鍛ㄦ棩鎭�
+* @update: 鍛ㄦ棩鎭� (2015-10-21 18:32)
+*/
+.oredr-id{
+    color: #404040;
+    margin: 1.2083333333rem 0.8333333333rem;
+    height: 1rem;
+}
+.oredr-id p:nth-child(1){
+    line-height: 1rem;
+    margin-bottom: 0.5rem;
+	width:22rem;
+    float: left;
+}
+.oredr-id p:nth-child(2){
+    line-height: 1rem;
+    margin-bottom: 0.5rem;
+    float:left;
+}
+.oredr-box{
+    height: 6.16666666666rem;
+    background-color: #f5f5f5;
+    float: left;
+    border: 0.8333333333rem solid #f5f5f5;
+}
+.oredr-box img {
+    float: left;
+    width: 6.1666666666rem;
+    height: 6.1666666666rem;
+    margin-right: 1.6666666666rem;
+    margin-bottom: 0.8333333333rem;
+}
+.oredr-box p:nth-child(2){
+    line-height: 1rem;
+    float: left;
+    width:17rem;
+    color: #404040;
+    margin-bottom: 0.8333333333rem;
+}
+.oredr-box p:nth-child(3){
+    line-height: 1rem;
+    float: left;
+    width:17rem;
+    color:#666;
+    margin-bottom: 2.083333333rem;
+}
+.oredr-box p:nth-child(4){
+    line-height: 1.25rem;
+    float: left;
+    color: #ff517a;
+    font-size: 1.25rem;
+}
+.oredr-box p:nth-child(4) span{
+    line-height: 1rem;
+    font-size: 1rem;
+}
+
+.fk {
+    text-align: center;
+    float: right;
+    width: 5rem;
+    height: 2rem;
+    line-height: 2rem;
+    border: 1px solid #ff517a;
+    border-radius: 4px;
+    position: relative;
+    margin: 0.5rem;
+}
+.fk a {
+    color: #ff517a;
+}
+
+.ckxq {
+    border:0.0833333333rem solid #666;
+    margin: 0.5rem;
+    text-align: center;
+    float: right;
+    width: 6.16666666666rem;
+    height: 2.166666666rem;
+    line-height: 2rem;
+    border-radius: 4px;
+    position: relative;
+}
+
+.ckxq a {
+    color: #666;
+}
+.oredr-box div:nth-child(8){
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: 1px solid #ff517a;
+    float: right;
+    width: 4rem;
+    height: 2rem;
+    line-height: 2rem;
+    margin-right: 1.6666666666rem ;
+    text-align: center;
+}
+.back{
+    border-radius: 4px;
+    color: #ffffff;
+    background-color: #ff2d5f;
+    width: 9.9166666666rem;
+    height: 2.8333333333rem;
+    line-height: 2.8333333333rem;
+    text-align: center;
+    margin:5.4166666666rem 0 0 8.375rem;
+}
+.bcj {
+    margin: 0.5rem;
+    border:0.0833333333rem solid #ff517a;
+    text-align: center;
+    float: right;
+    width: 6.16666666666rem;
+    height: 2.166666666rem;
+    line-height: 2rem;
+    border-radius: 4px;
+    position: relative;
+}
+.bcj>a {
+    color: #ff517a;
+}

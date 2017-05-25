@@ -1,0 +1,59 @@
+#set($title="商品列表")
+
+#parse("./back/inc/header.vm")
+<link rel="stylesheet" type="text/css" href="/miao/css/base.css">
+<link rel="stylesheet" type="text/css" href="/miao/css/moban.css">
+#parse("./back/inc/nav.vm")
+
+<body>
+<div class="wrap">
+		<div class="cent">
+			<div class="head">$title</div>
+                <div class="input-box">
+        			<div><span>商品名称：</span>
+        			 <input type="text" id="goodsName" name="goodsName" />
+                    </div>
+                    <div class="col-sm-8">
+        				<span>商品类型：</span>
+                        <select name="goodsType" id="goodsType" class="select">
+                                <option value="">全部</option>
+        					#foreach($goodsCategory in $!{goodsCategoryList})
+        						<option value="$!{goodsCategory.id}">
+        							$!{goodsCategory.categoryName}
+        						</option>
+        					#end
+                        </select>
+                    </div>
+				</div>
+					<div class="input-box">
+    					<div style="widht:400px;">
+    						<button class="btn btn-success" id="searchGoods">查询</button>
+							<button class="btn btn-success" id="uploadGoods">添加商品</button>
+                        </div>
+			        </div>
+                <div class="table-width">
+					<table style="width:100%;" class="table" cellspacing="0">
+                       <thead >
+                        <tr><th><input type="checkbox" id="checkAll" onclick="checkAll('checkAll')"/></th>
+							<th style="width:20%;text-align:center;">商品编号</th>
+							<th style="width:20%;text-align:center;">商品名称</th>
+							<th style="width:20%;text-align:center;">商品价格</th>
+							<th style="width:20%;text-align:center;">已售数量</th>
+							<th style="width:20%;text-align:center;">操作</th>
+                        </tr>
+						</thead>
+                        <tbody id="tbodyGoods"></tbody>
+                    </table>
+				</div>
+				<div class="table-foot">
+					<div style="Float:right;margin-right:30px;" id="pageGoods"></div>
+				</div>
+        </div>
+</div>
+			
+<script type="text/javascript" src="/miao/js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="/miao/js/laydate/laydate.js"></script>
+<script type="text/javascript" src="/miao/js/goods/goodsList.js"></script>
+</body>
+#parse("./back/inc/footer.vm")
+</html>

@@ -1,0 +1,256 @@
+#set($title="修改项目")
+<link rel="stylesheet" type="text/css" href="/miao/css/autocomplete.css">
+#parse("./back/inc/header.vm")
+
+<body>
+<div id="wrapper">
+    <!-- Navigation -->
+    #parse("./back/inc/nav.vm")
+		    <div id="itemInfo">
+                <h3>查看/修改项目基本信息</h3>
+            <div class="bs-example4" data-example-id="contextual-table">
+                <div class="tab-content">
+                    <div class="tab-pane active">
+                        <form class="form-horizontal" id="horizontal-form" enctype="multipart/form-data">
+							<input type="hidden" id="operationType" name="operationType" value="$!operationType">
+							<input type="hidden" name="goodsId" id="goodsId" value="$!goodsVO.id" />
+							<input type="hidden" name="goodsTeamId" id="goodsTeamId" value="" />
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">项目名</label>
+            
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control1" id="goodsName" name="goodsName" value="$!goodsVO.goodsName"
+                                           placeholder="请输入项目名">
+                                </div>
+                            </div>
+            
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">类别</label>
+                                <div class="col-sm-8">
+									<input type="hidden" id = "categoryselectorId" value="$!goodsVO.categoryId">
+                                    <select name="category" id="categoryselector" class="form-control1">
+										#foreach($goodscategory in $goodsCategoryList)
+											<option value="$!goodscategory.id">$!goodscategory.categoryName</option>
+										#end
+                                    </select>
+                                </div>
+                            </div>
+							
+							 <div class="form-group">
+                                <label class="col-sm-2 control-label">商品类型</label>
+            
+                                <div class="col-sm-8">
+									<input type="hidden" id = "goodsTypeselectorId" value="$!goodsVO.goodsType">
+                                    <select name="goodsType" id="goodsTypeselector" class="form-control1"  onchange="ifShowDiv()">
+										#foreach($goodsType in $!{goodsTypeList})
+											<option value="$!{goodsType.code}">
+												$!{goodsType.message}
+											</option>
+										#end
+                                    </select>
+                                </div>
+                            </div>
+							
+							<div class="form-group" id="teamGroupNumDiv">
+                                <label class="col-sm-2 control-label">拼团人数</label>
+            
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control1" name="teamGroupNum" id="teamGroupNum" value="$!goodsVO.goodsGroupNumLimit"/>
+                                </div>
+                            </div>
+							
+								<div class="form-group" id="teamGroupTimeDiv">
+                                <label class="col-sm-2 control-label">有效时间</label>
+            
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control1" name="teamGroupTime" id="teamGroupTime" value="$!goodsVO.goodsGroupTime" />
+                                </div>
+                            </div>
+            
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">价格</label>
+            
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control1" name="goodsPrice" id="goodsPrice" value="$!goodsVO.goodsPrice"
+                                           placeholder="请输入原价">
+                                </div>
+                            </div>
+							
+							
+							<div class="form-group">
+                                <label class="col-sm-2 control-label">售出数量(非必填)</label>
+            
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control1" name="goodsSoldNumber" id="goodsSoldNumber" value="$!goodsVO.goodsSoldNumber"/>
+                                </div>
+                            </div>
+							
+							
+							#if(!$!goodsVO.goodsPic)
+								#set ($goodsVO.goodsPic="$mmfqStaticHost$!assertPath/img/choose3.png")
+							#end
+							#if(!$!goodsVO.goodsDetailsShowPic)
+								#set ($goodsVO.goodsDetailsShowPic="$mmfqStaticHost$!assertPath/img/choose3.png")
+							#end
+            
+							
+							 <div class="form-group">
+                                <label class="col-sm-2 control-label">商品列表展示图(240*240)</label>
+                                <div class="col-sm-8">
+            					<input type="text" id="goodsPicName1" name="goodsPicName1" style="display:none;"/>
+            					<input class="form-control1" style = "width:120px;" onclick= "imgClick(1)" type="button" id="goodsPicNameBtn1" name="goodsPicNameBtn1" value="上传图片"/>
+            					<input type="file" id="goodsPic1" name="goodsPic1" onchange = "imgChange(1)" accept="image/*" style="display:none;"/></span>
+            					<span>图片预览: <img id="goodsPicY1" name="goodsPicY1" ondblclick="cleanPic('goodsPicY1','goodsPic1','goodsImg1','goodsPicName1')" style="width:100px;heigth:100px;" src="$!goodsVO.goodsPic"/></span>
+								</div>
+                            </div>
+							<hr />
+							<div class="form-group">
+                                <label class="col-sm-2 control-label">商品详情展示图(430*430)</label>
+                                <div class="col-sm-8">
+            					<input type="text" id="goodsPicName2" name="goodsPicName2" style="display:none;"/>
+            					<input class="form-control1" style = "width:120px;" onclick= "imgClick(2)" type="button" id="goodsPicNameBtn2" name="goodsPicNameBtn2" value="上传图片"/>
+            					<input type="file" id="goodsPic2" name="goodsPic2" onchange = "imgChange(2)" accept="image/*" style="display:none;"/></span>
+            					<span>图片预览: <img id="goodsPicY2" name="goodsPicY2" ondblclick="cleanPic('goodsPicY2','goodsPic2','goodsImg2','goodsPicName2')" style="width:100px;heigth:100px;" src="$!goodsVO.goodsDetailsShowPic"/></span>
+								</div>
+                            </div>
+					
+							#if(!$!goodsVO.goodsDetailsPic1)
+								#set ($goodsVO.goodsDetailsPic1="$mmfqStaticHost$!assertPath/img/choose3.png")
+							#end
+							#if(!$!goodsVO.goodsDetailsPic2)
+								#set ($goodsVO.goodsDetailsPic2="$mmfqStaticHost$!assertPath/img/choose3.png")
+							#end
+							#if(!$!goodsVO.goodsDetailsPic3)
+								#set ($goodsVO.goodsDetailsPic3="$mmfqStaticHost$!assertPath/img/choose3.png")
+							#end
+							#if(!$!goodsVO.goodsDetailsPic4)
+								#set ($goodsVO.goodsDetailsPic4="$mmfqStaticHost$!assertPath/img/choose3.png")
+							#end
+							#if(!$!goodsVO.goodsDetailsPic5)
+								#set ($goodsVO.goodsDetailsPic5="$mmfqStaticHost$!assertPath/img/choose3.png")
+							#end
+							#if(!$!goodsVO.goodsDetailsPic6)
+								#set ($goodsVO.goodsDetailsPic6="$mmfqStaticHost$!assertPath/img/choose3.png")
+							#end
+							#if(!$!goodsVO.goodsDetailsPic7)
+								#set ($goodsVO.goodsDetailsPic7="$mmfqStaticHost$!assertPath/img/choose3.png")
+							#end
+							#if(!$!goodsVO.goodsDetailsPic8)
+								#set ($goodsVO.goodsDetailsPic8="$mmfqStaticHost$!assertPath/img/choose3.png")
+							#end
+							#if(!$!goodsVO.goodsDetailsPic9)
+								#set ($goodsVO.goodsDetailsPic9="$mmfqStaticHost$!assertPath/img/choose3.png")
+							#end
+							#if(!$!goodsVO.goodsDetailsPic10)
+								#set ($goodsVO.goodsDetailsPic10="$mmfqStaticHost$!assertPath/img/choose3.png")
+							#end
+					
+							
+							
+							<div class="form-group">
+								<label class="col-sm-2 control-label">详情图片1</label>
+            					<input type="text" id="goodsDetailsPicName1" name="goodsDetailsPicName1" style="display:none;"/>
+            					<input class="form-control1" style = "width:120px;" onclick= "goodsDetailsClick(1)"  type="button" id="goodsDetailsPicBtncName1" name="goodsDetailsPicBtncName1" value="上传图片"/>
+            					<input type="file" id="goodsDetailsPic1" name="goodsDetailsPic1" onchange = "goodsDetailsChange(1)" accept="image/*" style="display:none;"/></span>
+            					<span>图片预览1: <img id="goodsDetailsPicY1" ondblclick="cleanPic('goodsDetailsPicY1','goodsDetailsPic1','goodsDetailsImg1','goodsDetailsPicName1')" name="goodsDetailsPicY1" style="width:100px;heigth:100px;" src="$!goodsVO.goodsDetailsPic1"/></span>
+                            </div>
+							
+        
+                            <div class="form-group">
+								<label class="col-sm-2 control-label">详情图片2</label>
+            					<input type="text" id="goodsDetailsPicName2" name="goodsDetailsPicName2" style="display:none;"/>
+            					<input class="form-control1" style = "width:120px;" onclick= "goodsDetailsClick(2)"  type="button" id="goodsDetailsPicBtncName2" name="goodsDetailsPicBtncName2" value="上传图片"/>
+            					<input type="file" id="goodsDetailsPic2" name="goodsDetailsPic2" onchange = "goodsDetailsChange(2)" accept="image/*" style="display:none;"/></span>
+            					<span>图片预览2: <img id="goodsDetailsPicY2" ondblclick="cleanPic('goodsDetailsPicY2','goodsDetailsPic2','goodsDetailsImg2','goodsDetailsPicName2')" name="goodsDetailsPicY2" style="width:100px;heigth:100px;" src="$!goodsVO.goodsDetailsPic2"/></span>
+                            </div>
+							
+        
+                            <div class="form-group">
+								<label class="col-sm-2 control-label">详情图片3</label>
+            					<input type="text" id="goodsDetailsPicName3" name="goodsDetailsPicName3" style="display:none;"/>
+            					<input class="form-control1" style = "width:120px;" onclick= "goodsDetailsClick(3)"  type="button" id="goodsDetailsPicBtncName3" name="goodsDetailsPicBtncName3" value="上传图片"/>
+            					<input type="file" id="goodsDetailsPic3" name="goodsDetailsPic3" onchange = "goodsDetailsChange(3)" accept="image/*" style="display:none;"/></span>
+            					<span>图片预览3: <img id="goodsDetailsPicY3" ondblclick="cleanPic('goodsDetailsPicY3','goodsDetailsPic3','goodsDetailsImg3','goodsDetailsPicName3')" name="goodsDetailsPicY3" style="width:100px;heigth:100px;" src="$!goodsVO.goodsDetailsPic3"/></span>
+                            </div>
+							
+							
+                            <div class="form-group">
+								<label class="col-sm-2 control-label">详情图片4</label>
+            					<input type="text" id="goodsDetailsPicName4" name="goodsDetailsPicName4" style="display:none;"/>
+            					<input class="form-control1" style = "width:120px;" onclick= "goodsDetailsClick(4)"  type="button" id="goodsDetailsPicBtncName4" name="goodsDetailsPicBtncName4" value="上传图片"/>
+            					<input type="file" id="goodsDetailsPic4" name="goodsDetailsPic4" onchange = "goodsDetailsChange(4)" accept="image/*" style="display:none;"/></span>
+            					<span>图片预览4: <img id="goodsDetailsPicY4" ondblclick="cleanPic('goodsDetailsPicY4','goodsDetailsPic4','goodsDetailsImg4','goodsDetailsPicName4')" name="goodsDetailsPicY4" style="width:100px;heigth:100px;" src="$!goodsVO.goodsDetailsPic4"/></span>
+                            </div>
+							
+        
+                            <div class="form-group">
+								<label class="col-sm-2 control-label">详情图片5</label>
+            					<input type="text" id="goodsDetailsPicName5" name="goodsDetailsPicName5" style="display:none;"/>
+            					<input class="form-control1" style = "width:120px;" onclick= "goodsDetailsClick(5)"  type="button" id="goodsDetailsPicBtncName5" name="goodsDetailsPicBtncName5" value="上传图片"/>
+            					<input type="file" id="goodsDetailsPic5" name="goodsDetailsPic5" onchange = "goodsDetailsChange(5)" accept="image/*" style="display:none;"/></span>
+            					<span>图片预览5: <img id="goodsDetailsPicY5" ondblclick="cleanPic('goodsDetailsPicY5','goodsDetailsPic5','goodsDetailsImg5','goodsDetailsPicName5')" name="goodsDetailsPicY5" style="width:100px;heigth:100px;" src="$!goodsVO.goodsDetailsPic5"/></span>
+                            </div>
+							
+        
+                            <div class="form-group">
+								<label class="col-sm-2 control-label">详情图片6</label>
+            					<input type="text" id="goodsDetailsPicName6" name="goodsDetailsPicName6" style="display:none;"/>
+            					<input class="form-control1" style = "width:120px;" onclick= "goodsDetailsClick(6)"  type="button" id="goodsDetailsPicBtncName6" name="goodsDetailsPicBtncName6" value="上传图片"/>
+            					<input type="file" id="goodsDetailsPic6" name="goodsDetailsPic6" onchange = "goodsDetailsChange(6)" accept="image/*" style="display:none;"/></span>
+            					<span>图片预览6: <img id="goodsDetailsPicY6" ondblclick="cleanPic('goodsDetailsPicY6','goodsDetailsPic6','goodsDetailsImg6','goodsDetailsPicName6')" name="goodsDetailsPicY6" style="width:100px;heigth:100px;" src="$!goodsVO.goodsDetailsPic6"/></span>
+                            </div>
+							
+        
+                            <div class="form-group">
+								<label class="col-sm-2 control-label">详情图片7</label>
+            					<input type="text" id="goodsDetailsPicName7" name="goodsDetailsPicName7" style="display:none;"/>
+            					<input class="form-control1" style = "width:120px;" onclick= "goodsDetailsClick(7)"  type="button" id="goodsDetailsPicBtncName7" name="goodsDetailsPicBtncName7" value="上传图片"/>
+            					<input type="file" id="goodsDetailsPic7" name="goodsDetailsPic7" onchange = "goodsDetailsChange(7)" accept="image/*" style="display:none;"/></span>
+            					<span>图片预览7: <img id="goodsDetailsPicY7" ondblclick="cleanPic('goodsDetailsPicY7','goodsDetailsPic7','goodsDetailsImg7','goodsDetailsPicName7')" name="goodsDetailsPicY7" style="width:100px;heigth:100px;" src="$!goodsVO.goodsDetailsPic7"/></span>
+                            </div>
+							
+        
+                            <div class="form-group">
+								<label class="col-sm-2 control-label">详情图片8</label>
+            					<input type="text" id="goodsDetailsPicName8" name="goodsDetailsPicName8" style="display:none;"/>
+            					<input class="form-control1" style = "width:120px;" onclick= "goodsDetailsClick(8)"  type="button" id="goodsDetailsPicBtncName8" name="goodsDetailsPicBtncName8" value="上传图片"/>
+            					<input type="file" id="goodsDetailsPic8" name="goodsDetailsPic8" onchange = "goodsDetailsChange(8)" accept="image/*" style="display:none;"/></span>
+            					<span>图片预览8: <img id="goodsDetailsPicY8" ondblclick="cleanPic('goodsDetailsPicY8','goodsDetailsPic8','goodsDetailsImg8','goodsDetailsPicName8')" name="goodsDetailsPicY8" style="width:100px;heigth:100px;" src="$!goodsVO.goodsDetailsPic8"/></span>
+                            </div>
+							
+        
+                            <div class="form-group">
+								<label class="col-sm-2 control-label">详情图片9</label>
+            					<input type="text" id="goodsDetailsPicName9" name="goodsDetailsPicName9" style="display:none;"/>
+            					<input class="form-control1" style = "width:120px;" onclick= "goodsDetailsClick(9)"  type="button" id="goodsDetailsPicBtncName9" name="goodsDetailsPicBtncName9" value="上传图片"/>
+            					<input type="file" id="goodsDetailsPic9" name="goodsDetailsPic9" onchange = "goodsDetailsChange(9)" accept="image/*" style="display:none;"/></span>
+            					<span>图片预览9: <img id="goodsDetailsPicY9" ondblclick="cleanPic('goodsDetailsPicY9','goodsDetailsPic9','goodsDetailsImg9','goodsDetailsPicName9')" name="goodsDetailsPicY9" style="width:100px;heigth:100px;" src="$!goodsVO.goodsDetailsPic9"/></span>
+                            </div>
+							
+        
+                            <div class="form-group">
+								<label class="col-sm-2 control-label">详情图片10</label>
+            					<input type="text" id="goodsDetailsPicName10" name="goodsDetailsPicName10" style="display:none;"/>
+            					<input class="form-control1" style = "width:120px;" onclick= "goodsDetailsClick(10)"  type="button" id="goodsDetailsPicBtncName10" name="goodsDetailsPicBtncName10" value="上传图片"/>
+            					<input type="file" id="goodsDetailsPic10" name="goodsDetailsPic10" onchange = "goodsDetailsChange(10)" accept="image/*" style="display:none;"/></span>
+            					<span>图片预览10: <img id="goodsDetailsPicY10" ondblclick="cleanPic('goodsDetailsPicY10','goodsDetailsPic10','goodsDetailsImg10','goodsDetailsPicName10')" name="goodsDetailsPicY10" style="width:100px;heigth:100px;" src="$!goodsVO.goodsDetailsPic10"/></span>
+                            </div>
+							
+        
+                            <div class="row">
+                                <div class="col-sm-8 col-sm-offset-5">
+                                    <button class="btn-success btn" id="uploadsubmit">提交</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                </div>
+			</div>
+			
+    #parse("./back/inc/copyright.vm")
+</div>
+<script src="/miao/js/jquery.validate.min.js"></script>
+<script src="/miao/js/goods/updateItems.js"></script>
+</body>
+</html>

@@ -1,0 +1,438 @@
+/*@media screen and (min-width: 1660px) {*/
+.wrap {
+    float: left; /* 自适应内容宽度 */
+    position: relative;
+    left: 50%;
+    width: 100%;
+    max-width: 1680px;
+}
+.cent {
+    position: relative;
+    left: -50%;
+    float: left;
+    width: 100%;
+    max-width: 1680px;
+}
+
+button {
+    padding: 0;
+}
+
+.head {
+    color: rgba(102, 102, 102, 1);
+    padding-left: 18px;
+    height: 80px;
+    background-color: rgba(246, 246, 246, 1);
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 80px;
+    border-bottom: 1px solid rgba(230, 230, 230, 1);
+}
+
+.input-box {
+    float: left;
+    width: 99%;
+    color: rgba(102, 102, 102, 1);
+    padding-left: 1%;
+    font-size: 14px;
+}
+
+.input-box > div {
+    height: 34px;
+    margin: 19px 0;
+    float: left;
+}
+
+.input-box > div > span {
+    display: inline-block;
+    display: -moz-inline-box;
+    margin-right: 10px;
+    width: 100px;
+    text-align: right;
+}
+
+.input-box > div > input {
+    padding-left: 8px;
+    width: 180px;
+    height: 32px;
+    border-radius: 2px;
+    border: 1px solid rgba(204, 204, 204, 1);
+    margin-right: 18px;
+}
+
+.input-box > input:last-of-type {
+    margin-right: 20px;
+}
+
+.but {
+    background-color: rgba(255, 102, 0, 1);
+    height: 32px;
+    line-height: 32px;
+    width: 100px;
+    border: 0;
+    color: rgba(255, 255, 255, 1);
+    margin-right: 10px;
+}
+
+.but2 {
+    background-color: rgba(255, 102, 0, 1);
+    height: 32px;
+    line-height: 32px;
+    border: 0;
+    color: rgba(255, 255, 255, 1);
+    width: 120px;
+}
+
+.line-1px {
+    margin: 10px 18px;
+    height: 1px;
+    background-color: rgba(230, 230, 230, 1);
+}
+.line-width{
+    max-width: 1624px !important;
+}
+.select {
+    /*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/
+    border: solid 1px rgba(204, 204, 204, 1);
+    /*很关键：将默认的select选择框样式清除*/
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    /*在选择框的最右侧中间显示小箭头图片*/
+    background: url("../imgs/moban/dow.png") no-repeat scroll right 10px center transparent;
+    border-radius: 2px;
+    /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+    padding-right: 18px;
+    width: 198px;
+    height: 32px;
+        padding-left: 8px;
+    margin-left: -6.5px;
+    color: rgba(102, 102, 102, 1);
+}
+
+.table-width {
+    width: 99%;
+    overflow-x: auto;
+    margin-left: 1%;
+}
+
+.table {
+    color: rgba(153, 153, 153, 1);
+    font-size: 14px;
+    border: 1px solid rgba(222, 225, 229, 1);
+    margin-bottom: 0;
+}
+
+.table thead tr:first-of-type {
+    background-color: rgba(245, 246, 250, 1);
+}
+
+.table tr:last-of-type td {
+    border-bottom: 0;
+}
+
+.table th {
+    border-bottom: 1px solid rgba(222, 225, 229, 1);
+    border-right: 1px solid rgba(222, 225, 229, 1);
+    height: 22px;
+    line-height: 22px;
+}
+
+.table td {
+    word-break: break-all;
+    padding-left: 10px;
+    max-width: 280px;
+    width:180px;
+    height: 44px;
+    line-height: 44px;
+    border-bottom: 1px solid rgba(222, 225, 229, 1);
+    border-right: 1px solid rgba(222, 225, 229, 1);
+}
+
+.table td:last-of-type, th:last-of-type {
+    border-right: 0;
+}
+
+.table tr td:first-of-type, th:first-of-type {
+    width: 20px;
+    text-align: center;
+}
+
+.table tr td:nth-of-type(2), th:nth-of-type(2) {
+    width: 110px;
+}
+
+.table tr td:nth-last-of-type(2), th:nth-last-of-type(2) {
+ 
+}
+
+.table tr td:nth-last-of-type(3), th:nth-last-of-type(3) {
+   
+}
+
+.table tr td:last-of-type, th:last-of-type {
+  	width:auto;
+}
+.table tr td button:last-of-type{
+    margin-right: 0;
+}
+.table-foot {
+    float: left;
+    background-color: rgba(245, 246, 250, 1);
+    max-width: 1658px;
+    width: 99%;
+    color: rgba(153, 153, 153, 1);
+    font-size: 14px;
+    border-bottom: 1px solid rgba(222, 225, 229, 1);
+    border-left: 1px solid rgba(222, 225, 229, 1);
+    border-right: 1px solid rgba(222, 225, 229, 1);
+    text-align: left;
+    margin-left: 1%;
+}
+
+.table-foot p {
+    float: left;
+    padding-left: 0.603136308806%;
+    height: 44px;
+    line-height: 44px;
+}
+
+.table-foot p:first-of-type {
+    width: 7.056694813028%;
+    text-align: center;
+}
+
+.table-foot p:nth-of-type(2) {
+    width: 13.51025331725%;
+}
+
+.table-foot p:nth-of-type(3) {
+    text-align: right;
+    padding-left: 0;
+    padding-right: 1%;
+    width: 77.226779252111%;
+}
+.table-foot p:nth-of-type(3) span {
+    margin-right: 5px;
+}
+
+.table-foot p:nth-of-type(3) input {
+    width: 20px;
+    height: 15px;
+    line-height: normal;
+}
+.red {
+    color: rgba(255, 59, 96, 1);
+    background-color: rgba(255,255,255,0)!important;
+}
+
+.but3 {
+    background-color: rgba(0, 160, 233, 1);
+    height: 24px;
+    line-height: 24px;
+    width: 70px;
+    border: 0;
+    color: rgba(255, 255, 255, 1);
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.but4 {
+    background-color: rgba(60, 197, 233, 1);
+    height: 24px;
+    line-height: 24px;
+    width: 70px;
+    border: 0;
+    color: rgba(255, 255, 255, 1);
+}
+
+.but5 {
+    background-color: rgba(255, 59, 96, 1);
+    height: 20px;
+    width: 70px;
+    border: 0;
+    color: rgba(255, 255, 255, 1);
+    line-height: normal;
+}
+
+.del {
+    background-color: rgba(233, 0, 27, 1);
+    height: 32px;
+    width: 100px;
+    border: 0;
+    color: rgba(255, 255, 255, 1);
+    line-height: 32px;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    color: rgba(215, 215, 215, 1);
+    font-size: 12px;
+    position: absolute;
+    bottom: 10px;
+}
+
+.shadow {
+    top: 0;
+    left: 0;
+    z-index: 1;
+    position: fixed;
+    background-color: rgba(255, 255, 255, 1);
+    width: 100%;
+    height: 100%;
+}
+
+.upData {
+	height:500px;
+    overflow-y:auto;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 1);
+    width: 615px;
+    /*height: 420px;*/
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    border:1px solid rgba(230,230,230,1);
+}
+
+.line-1px-100 {
+    height: 1px;
+    width: 100%;
+    background-color: rgba(205, 205, 205, 1);
+}
+
+.upData .title {
+    color: rgba(51, 51, 51, 1);
+    font-size: 14px;
+    height: 45px;
+    line-height: 45px;
+    margin: 0 18px 0 15px;
+}
+
+.upData .title img {
+    margin: 14px 0;
+    float: right;
+
+}
+
+.upData .input-user-data {
+    font-size: 12px;
+    color: rgba(51, 51, 51, 1);
+    margin: 15px 20px;
+}
+
+.upData .input-user-data div {
+
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.upData .input-user-data span {
+    width: 84px;
+    display: inline-block;
+    display: -moz-inline-box;
+}
+
+.upData .input-user-data input {
+    height: 30px;
+    width: 200px;
+    border: 1px solid rgba(204, 204, 204, 1);
+}
+
+.upData .proof {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 66px !important;
+    height: 65px !important;
+    opacity: 0;
+
+}
+
+.eval-pic {
+    top: 0;
+    left: 0;
+    position: relative;
+    width: 66px;
+    height: 65px;
+    background-color: rgba(255, 255, 255, 1);
+    margin-bottom: 0 !important;
+}
+
+.eval-pic img {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.upimg {
+    position: relative;
+    float: left;
+    margin-right: 10px
+}
+
+.clea {
+    clear: both;
+    width: 100%;
+    height: 1px;
+    margin-bottom: 0 !important;
+}
+
+.text {
+    float: left;
+    margin: 20px 0 0 0;
+}
+
+.ok {
+    float: left;
+    width: 58px;
+    height: 32px;
+    background-color: rgba(255, 116, 23, 1);
+    color: rgba(255, 255, 255, 1);
+    line-height: 32px;
+    text-align: center;
+    font-size: 12px;
+	cursor: pointer;
+    margin: 11px 10px 11px 0;
+}
+
+.clear {
+    float: left;
+    width: 56px;
+    height: 30px;
+    background-color: rgba(247, 247, 247, 1);
+    border: 1px solid rgba(204, 204, 204, 1);
+    line-height: 32px;
+    text-align: center;
+    font-size: 12px;
+    cursor: pointer;
+    margin: 11px 0 11px 0;
+}
+/*}*/
+.graphs{
+    background:rgba(255,255,255,1)!important;
+}
+.selected-item{
+    background-color: rgba(240,240,240,1);
+}
+#pageActivityDefine{
+    margin-top: 14px;
+    text-align: right;
+    float: left;
+    padding-left: 0;
+    padding-right: 1%;
+    width: 77.226779252111%;
+}
+.page{
+    margin-top: 14px;
+    text-align: right;
+    float: left;
+    padding-left: 0;
+    padding-right: 1%;
+    width: 77.226779252111%;
+}

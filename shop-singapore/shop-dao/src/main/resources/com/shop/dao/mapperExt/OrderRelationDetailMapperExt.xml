@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shop.dao.ext.OrderRelationDetailMapperExt">
+
+ <resultMap id="BaseResultMap" type="java.util.HashMap">
+		<result column="id" property="id" />
+		<result column="user_id" property="userId" />
+		<result column="goods_id" property="goodsId" />
+		<result column="order_sn" property="orderSn" />
+		<result column="num" property="number" />
+		<result column="create_time" property="createTime" />
+		<result column="update_time" property="updateTime" />
+	</resultMap>
+
+	<select id="selectMyOrderList" resultMap="BaseResultMap"
+		parameterType="java.util.HashMap">
+		SELECT
+		a.id AS details_id,
+		a.user_id,
+		a.goods_pic,
+		a.goods_name,
+		a.num,
+		a.goods_price,
+		b.id AS order_id,
+		b.order_sn,
+		b.order_price,
+		b.order_status,
+		b.receive_address
+		FROM
+		mmfq_user_order_details a LEFT JOIN
+		mmfq_user_order b ON a.order_sn = b.order_sn
+		where 1=1
+		<if test="userId != null and userId !=''">
+			AND a.user_id = #{userId,jdbcType=INTEGER}
+		</if>
+
+		order by a.create_time desc
+	</select>
+	
+</mapper>

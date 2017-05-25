@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <classPathEntry location="D:\mysql-connector-java-5.0.4-bin.jar"/>
+
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://192.168.0.110/mmfq_singapore"
+                        userId="mmfq"
+                        password="mmfq">
+        </jdbcConnection>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="com.shop.entity.basic" targetProject="../shop-entity/src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="com.shop.dao.mapper" targetProject="../shop-dao/src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.shop.dao.basic" targetProject="../shop-dao/src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+        <!--账户管理-->
+        <!-- <table schema="mmfq_singapore" tableName="mmfq_admin" domainObjectName="Admin" ></table> -->
+    	 <!-- <table schema="mmfq_singapore" tableName="mmfq_goods" domainObjectName="Goods" ></table> -->
+    	<!-- <table schema="mmfq_singapore" tableName="mmfq_user" domainObjectName="User" ></table> -->
+        <!-- <table schema="mmfq_singapore" tableName="mmfq_user_order" domainObjectName="UserOrder"></table> -->
+       	<!-- <table schema="mmfq_singapore" tableName="mmfq_user_receipt_address" domainObjectName="UserReceiptAddress" ></table> -->
+       	<!-- <table schema="mmfq_singapore" tableName="mmfq_user_order_details" domainObjectName="UserOrderDetails" ></table> -->
+        <!-- <table schema="mmfq_singapore" tableName="mmfq_goods_category" domainObjectName="GoodsCategory" ></table> -->
+        
+        <!--拼团模块-->
+        <!-- <table schema="mmfq_singapore" tableName="mmfq_goods" domainObjectName="Goods" ></table>
+        <table schema="mmfq_singapore" tableName="mmfq_team_order_record" domainObjectName="TeamOrderRecord" ></table>
+       	<table schema="mmfq_singapore" tableName="mmfq_team_member_record" domainObjectName="TeamMemberRecord" ></table> -->
+        
+    </context>
+</generatorConfiguration>

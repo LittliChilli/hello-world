@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Shopping</title>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/commons.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+<div class="b" style="bottom:0px;">
+    <div class="h tm">
+        <h4 style="padding-top:15px;text-align:center;color:white;">用户注册</h4>
+        <div class="back" ng-click="back()">返回</div>
+    </div>
+    <div class="b_b">
+        <div style="width:80%;margin:0 auto;margin-top:25px;">
+            <div role="form">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="注册邮箱" ng-model="user_name">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="密码" ng-model="password">
+                </div>
+                <button type="submit" class="btn btn-danger form-control" ng-click="shop_register()">注册</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/angular.min.js"></script>
+<script src="js/zepto.min.js"></script>
+<script src="js_controller/api.js"></script>
+<script src="js_controller/register.js"></script>
+<script src="js/common/toast.js"></script>
+</body>
+</html>

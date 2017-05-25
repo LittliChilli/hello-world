@@ -1,0 +1,188 @@
+/*
+* @description: 璐﹀崟鏍峰紡
+* @author: 鍛ㄦ棩鎭�
+* @update: 鍛ㄦ棩鎭� (2015-10-23 18:32)
+*/
+body{
+    background-color: #ebeced;
+}
+.header-left-doctor {
+    background-color: #FFFFFF;
+    float: left;
+    width: 8.8333333333rem;
+    height: 3.3333333333rem;
+    line-height: 3.3333333333rem;
+    text-align: center;
+    color: #404040;
+    position: relative;
+}
+
+.header-divide-line-doctor {
+    float: left;
+    height: 1.25rem;
+    margin-top: 1.04166666666rem;
+    width: 0.0833333333rem;
+    background-color: #e5e5e5;
+}
+.checked{
+    position: absolute;
+    background-color: #ff517a;
+    width: 3.3333333333rem;
+    height: 0.1666666666rem;
+    top: 3rem;
+    left: 2.75rem;
+    /*margin-top: 1.0833333333rem;*/
+}
+.line-60px {
+    line-height: 3rem;
+    color:#666;
+    margin-left: 0.8333333333rem;
+}
+.line-60px span{
+    margin-left: 1rem;
+}
+.bill-box{
+    background-color: #fff;
+    position: relative;
+    height: 4.375rem;
+}
+.bill-box img{
+    float: left;
+    width: 1.5833333333rem;
+    height:1.5833333333rem;
+    margin:1.3958333333rem 0.8333333333rem;
+}
+.bill-box p:nth-child(2){
+    float: left;
+    color:#666666;
+    margin-top: 1.625rem;
+}
+.bill-box p:nth-child(4){
+    float: right;
+    color:#ff517a;
+    margin-top: 1.625rem;
+    margin-right: 0.8333333333rem;
+}
+.bill-box p:nth-child(3){
+    width:1rem;
+    position: relative;
+    float: right;
+    margin-top: 1.625rem;
+    margin-right: 0.8333333333rem;
+}
+.bill-box p span{
+    position: absolute;
+    display: block;
+    width: 0.8rem;
+    height: 0.8rem;
+    border-style: solid;
+    border-color: #ebeced;
+    border-width: 4px 0 0 4px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.pay-box{
+    WIDTH: 100%;
+    float: left;
+    background-color: #FFFFFF;
+}
+/*娌℃湁鏁板瓧鐨勫閫夋鏍峰紡*/
+.checked-boxFour {
+    float: left;
+    width: 1.5833333333rem;
+    height: 1.5833333333rem;
+    background: #FFFFFF;
+    margin: 1.0833333333rem 0.8333333333rem;
+    position: relative;
+    /*-webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.5);*/
+    /*-moz-box-shadow: 0px 1px 3px rgba(0,0,0,0.5);*/
+    /*box-shadow: 0px 1px 3px rgba(0,0,0,0.5);*/
+}
+.checked-boxFour label {
+    opacity: 0;
+    display: block;
+    width: 1.5833333333rem;
+    height: 1.5833333333rem;
+    border-radius: 100px;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    transition: all .5s ease;
+    cursor: pointer;
+    position: absolute;
+    top: 0; /*璁板綍涓�涓嬪洜涓哄湪radio涓嬫湁涓�涓竟妗嗕负2px鐨刣iv鎵�浠ヤ笂瀹氫綅radio璺濈top鍜宭eft鐨勬椂鍊欒鍔犱笂杩�2px*/
+    left: 0;
+    z-index: 1;
+    background: #ddd;
+    /*-webkit-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);*/
+    /*-moz-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);*/
+    /*box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);*/
+}
+.checked-boxFour label span{
+    top: 0.1666666666rem;
+    left:0.5rem;
+    position: absolute;
+    display: block;
+    width: 0.5rem;
+    height: 1rem;
+    border-style: solid;
+    border-color: #FFFFFF;
+    border-width: 2px 0 0 2px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+.checked-boxFour input{
+    width: 100%;
+    height: 100%;
+}
+.checked-boxFour input[type="checkbox"]:checked + label {
+    background: #ff517a;
+    opacity: 1;
+}
+.checked-boxFour input[type="checkbox"]:checked ~ div {
+    border:0;
+    background-color: #ff517a;
+}
+.checked-boxFour input[type="checkbox"] {
+    visibility: hidden;
+}
+.checked-boxFour .radio-box-style{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    border: 0.08333333333rem solid #cccccc;
+    border-radius: 100%;
+}
+/*娌℃湁鏁板瓧鐨勫崟閫夋鏍峰紡-end*/
+.goods{
+    width: 18rem;
+    float: left;
+    height: 3.75rem;
+}
+.goods-p{
+    margin-top:1.25rem;
+    height: 1rem;
+}
+.goods-p-text{
+    margin-top:0.5rem;
+    font-size: 0.8333333333rem;
+    height: 0.8333333333rem;
+    color:#ccc;
+}
+.goods-p-text span{
+    margin-left: 1rem;
+}
+
+.price{
+    color: #ff517a;
+    float:left;
+    height: 3.75rem;
+    line-height: 3.75rem;
+}

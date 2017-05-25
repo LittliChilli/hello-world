@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shop.dao.ext.TeamGroupMapperExt">
+	
+	<select id="selectTeamGroupList" resultType="java.util.HashMap"
+		parameterType="java.util.HashMap">
+		SELECT
+		a.id AS userId,
+		a.login_name AS loginName,
+		
+		b.id AS team_member_id,
+		b.teanm_order_status AS teamStatus,
+		b.create_time AS createTime,
+		b.receive_address AS receiveAddress,
+		b.order_sn AS orderSn,
+		
+		c.id AS teamId,
+		c.team_group_sn AS teamGroupSn,
+		c.goods_id AS goodsId,
+		c.goods_name AS goodName,
+		c.goods_price AS goodsPrice,
+		c.goods_pic AS goodsPic,
+		c.finished_time AS finishedTime
+		
+		FROM
+		mmfq_user a,
+		mmfq_team_member_record b,
+		mmfq_team_order_record c 
+		
+		WHERE a.id = b.user_id 
+		AND b.team_id = c.id 
+		<if test="memberName != null and memberName !=''">
+			AND a.login_name like "%"#{memberName}"%" 
+		</if>
+		
+		<if test="userId != null and userId !=''">
+			AND a.id = #{userId}
+		</if>
+		
+		<if test="teamGroupSn != null and teamGroupSn !=''">
+			AND c.team_group_sn = #{teamGroupSn}
+		</if>
+		
+		<if test="goodsName != null and goodsName !=''">
+			AND c.goods_name = #{goodsName}
+		</if>
+		
+		<if test="status != null and status !=''">
+			AND b.teanm_order_status = #{status}
+		</if>
+		
+		<if test="createSatrtDate != null and createSatrtDate !=''">
+			AND c.create_time <![CDATA[>=]]>
+			#{createSatrtDate,jdbcType=TIMESTAMP}
+		</if>
+		
+		<if test="createEndDate != null and createEndDate != ''">
+			AND c.create_time <![CDATA[<=]]>
+			#{createEndDate,jdbcType=TIMESTAMP}
+		</if>
+		
+		<if test="successStartDate != null and successStartDate !=''">
+			AND c.finished_time <![CDATA[>=]]>
+			#{successStartDate,jdbcType=TIMESTAMP}
+		</if>
+		
+		<if test="successEndDate != null and successEndDate != ''">
+			AND c.finished_time <![CDATA[<=]]>
+			#{successEndDate,jdbcType=TIMESTAMP}
+		</if>
+		ORDER BY c.create_time DESC, c.finished_time DESC
+	</select>
+	
+	
+	<select id="exportExcelList" resultType="com.shop.entity.excel.TeamGroupExportExcel"
+		parameterType="java.util.HashMap">
+		SELECT
+		a.login_name AS loginName,
+		
+		c.team_group_sn AS teamGroupSn,
+		
+		c.goods_name AS goodName,
+		
+		c.goods_price AS goodsPrice,
+		
+		c.finished_time AS finishedTime,
+		
+		IF(b.teanm_order_status=0,'未支付',
+		IF(b.teanm_order_status=1,'已支付(拼团中)',
+		IF(b.teanm_order_status=2,'已成团(采购中)',
+		IF(b.teanm_order_status=3,'拼团失败',
+		IF(b.teanm_order_status=4,'拼团取消',
+		IF(b.teanm_order_status=5,'送货中','已完成'
+		)))))) AS teamStatus,
+		
+		b.create_time AS createTime,
+		
+		b.receive_address AS receiveAddress
+		
+		
+		FROM
+		mmfq_user a,
+		mmfq_team_member_record b,
+		mmfq_team_order_record c 
+		
+		WHERE a.id = b.user_id 
+		AND b.team_id = c.id 
+		<if test="memberName != null and memberName !=''">
+			AND a.login_name like "%"#{memberName}"%" 
+		</if>
+		
+		<if test="userId != null and userId !=''">
+			AND a.id = #{userId}
+		</if>
+		
+		<if test="teamGroupSn != null and teamGroupSn !=''">
+			AND c.team_group_sn = #{teamGroupSn}
+		</if>
+		
+		<if test="goodsName != null and goodsName !=''">
+			AND c.goods_name = #{goodsName}
+		</if>
+		
+		<if test="status != null and status !=''">
+			AND b.teanm_order_status = #{status}
+		</if>
+		
+		<if test="createSatrtDate != null and createSatrtDate !=''">
+			AND c.create_time <![CDATA[>=]]>
+			#{createSatrtDate,jdbcType=TIMESTAMP}
+		</if>
+		
+		<if test="createEndDate != null and createEndDate != ''">
+			AND c.create_time <![CDATA[<=]]>
+			#{createEndDate,jdbcType=TIMESTAMP}
+		</if>
+		
+		<if test="successStartDate != null and successStartDate !=''">
+			AND c.finished_time <![CDATA[>=]]>
+			#{successStartDate,jdbcType=TIMESTAMP}
+		</if>
+		
+		<if test="successEndDate != null and successEndDate != ''">
+			AND c.finished_time <![CDATA[<=]]>
+			#{successEndDate,jdbcType=TIMESTAMP}
+		</if>
+		ORDER BY c.create_time DESC, c.finished_time DESC
+	</select>
+	
+</mapper>

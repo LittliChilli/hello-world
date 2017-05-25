@@ -1,0 +1,64 @@
+@charset "UTF-8";
+/* 帮助中心begin */
+
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.swipe_wrap {
+    background: #FFFFFF;
+}
+
+.swipe_wrap .wrap {
+    max-width: 640px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.swipe_wrap {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.help_width {
+    background-color: #FFFFFF;
+    max-width: 640px;
+    overflow: auto;
+}
+
+.help_top {
+    border-bottom: 5px solid #F343ff;
+}
+
+.help_top h3 {
+    color: #F34392;
+    line-height: 20px;
+    text-align: center;
+}
+
+.help_top h3 a img {
+    float: left;
+}
+
+.help_head {
+    text-align: center;
+    line-height: 40px;
+    background-color: #FEDFED;
+    text-shadow: 1px 1px 2px #000000;
+    height: 40px;
+    font-size: 18px;
+    color: #F34392;
+}
+
+.help_divtext {
+    margin-left: 4.5%;
+    margin-right: 4.5%;
+}
+
+.help_text {
+    font-size: 12px;
+    line-height: 28px;
+}

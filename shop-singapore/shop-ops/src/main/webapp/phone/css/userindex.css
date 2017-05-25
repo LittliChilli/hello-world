@@ -1,0 +1,135 @@
+.usrtoppic {
+    /*background-image: -webkit-linear-gradient(to bottom, #FCB888, #F29C9C);*/
+    /*background-image: linear-gradient(to top, #F29C9C, #FCB888);*/
+    /*background-image: -webkit-linear-gradient(90deg, #F29C9C, #FCB888);*/
+    /*background-image: linear-gradient(0deg, #F29C9C, #FCB888);*/
+    background: url(../img/toreg/head.png);
+    height: 160px;
+    padding-top: 20px;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+}
+
+.usrtoppic .usrpic {
+    background: url(../img/pz.png) no-repeat 0 0;
+    background-size: 94px 94px;
+    height: 94px;
+    width: 94px;
+    border-radius: 94px;
+    margin: 0 auto;
+}
+
+.usrtoppic .uname {
+    font-size: 14px;
+    color: #fef0e8;
+    margin-top: 25px;
+    text-align: center;
+}
+
+.usrtoppic .login_or_reg div {
+    margin-top: 14px;
+    display: inline-block;
+    float: left;
+    width: 50%;
+}
+
+.usrtoppic .login_or_reg div a {
+    border-radius: .2em;
+    color: #fff;
+    text-align: center;
+    display: block;
+    width: 90px;
+    height: 29px;
+    border: 1px #fff solid;
+    line-height: 29px;
+    float: left;
+    margin-left: 10px;
+    margin-right: 0;
+}
+
+.usrtoppic .login_or_reg div:nth-child(2n+1) a {
+    float: right;
+    margin-left: 0;
+    margin-right: 10px;
+}
+
+.user-action-list section {
+    height: 44px;
+    border-bottom: 1px solid #ccc;
+    padding: 0 10px;
+    background-color: #fff;
+}
+
+.user-action-list section:last-child {
+    border-bottom: 0 none;
+}
+
+.user-action-list a {
+    display: block;
+    padding: 10px 0;
+    line-height: 44px;
+    height: 24px;
+    position: relative;
+    text-decoration: none;
+}
+
+.user-action-list a div.icon {
+    float: left;
+    height: 24px;
+    width: 24px;
+}
+
+.user-action-list a div.usr_icon1 {
+    background: url(../img/i_1.png) no-repeat;
+}
+
+.user-action-list a div.usr_icon2 {
+    background: url(../img/i_2.png) no-repeat;
+}
+
+.user-action-list a div.usr_icon3 {
+    background: url(../img/i_3.png) no-repeat;
+}
+
+.user-action-list a div.usr_icon4 {
+    background: url(../img/i_4.png) no-repeat;
+}
+
+.user-action-list a div.usr_icon5 {
+    background: url(../img/yh.png) no-repeat;
+}
+
+.user-action-list a div.usr_icon1,
+.user-action-list a div.usr_icon2,
+.user-action-list a div.usr_icon3,
+.user-action-list a div.usr_icon4,
+.user-action-list a div.usr_icon5 {
+    background-size: 24px 24px;
+}
+
+.user-action-list div.arrow {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #ccc;
+    border-width: 2px 2px 0 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    right: 0;
+    bottom: 15px;
+}
+
+.user-action-list h2 {
+    font-weight: normal;
+    font-size: 14px;
+    padding-left: 30px;
+    line-height: 24px;
+    color: #666;
+}
+
+.fix_nav {
+    bottom: 40px;
+}

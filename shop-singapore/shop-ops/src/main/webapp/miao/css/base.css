@@ -1,0 +1,43 @@
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+p,
+blockquote,
+pre,
+address,
+img,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+input,
+tfoot,
+thead,
+tr,
+th,
+td {
+    margin: 0;
+    padding:0;
+    border: 0;
+    font-weight: normal;
+    font-variant: normal;
+    font-style: normal;
+}
+.none{
+    display: none;
+}
