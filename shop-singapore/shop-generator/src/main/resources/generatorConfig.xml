@@ -40,9 +40,9 @@
         <!-- <table schema="mmfq_singapore" tableName="mmfq_goods_category" domainObjectName="GoodsCategory" ></table> -->
         
         <!--拼团模块-->
-        <!-- <table schema="mmfq_singapore" tableName="mmfq_goods" domainObjectName="Goods" ></table>
+        <table schema="mmfq_singapore" tableName="mmfq_goods" domainObjectName="Goods" ></table
         <table schema="mmfq_singapore" tableName="mmfq_team_order_record" domainObjectName="TeamOrderRecord" ></table>
-       	<table schema="mmfq_singapore" tableName="mmfq_team_member_record" domainObjectName="TeamMemberRecord" ></table> -->
+       	<table schema="mmfq_singapore" tableName="mmfq_team_member_record" domainObjectName="TeamMemberRecord" ></table>
         
     </context>
 </generatorConfiguration>
