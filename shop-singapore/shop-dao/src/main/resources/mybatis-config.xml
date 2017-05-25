@@ -11,7 +11,7 @@
         <setting name="defaultExecutorType" value="SIMPLE"/>
         <setting name="defaultStatementTimeout" value="25000"/>
     </settings>
-    <typeAliases>
+    <typeAliases> 
     </typeAliases>
     <plugins>
         <!-- com.github.pagehelper为PageHelper类所在包名 -->
