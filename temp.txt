@@ -1,0 +1,37 @@
+
+查复日期：(暂不提供)
+
+登记日期：inStoreTime
+
+票据编号：billCode
+
+票面金额：billAmount
+
+持票人：owner
+
+出票日期：draweeTime
+
+到期日：expireDate
+
+出票人：drawer
+
+收票人：payee
+
+登记人：inStoreName
+
+审票人：checkName
+
+登记状态：storeStatus ('1: 未登记；2：已登记；3：已审验',)
+
+审票状态：storeStatus ('1: 未登记；2：已登记；3：已审验',)
+
+已否打印：printed
+
+
+
+
+
+----------------
+查看查复详情，单独提供接口，
+
+详情：replyContent
