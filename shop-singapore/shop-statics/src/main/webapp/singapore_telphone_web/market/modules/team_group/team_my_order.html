@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Shopping</title>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="/static/singapore_telphone_web/market/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/singapore_telphone_web/market/css/commons.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="/static/singapore_telphone_web/market/js/html5shiv.min.js"></script>
+    <script src="/static/singapore_telphone_web/market/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+
+<div style="top:0;left:0;position: fixed;background-color: black;opacity:0.4;width: 100%;height: 100%;z-index: 701;"
+     ng-show="shadow_back"
+     ng-click="not_share()"></div>
+<img src="image/show_text.png"
+     style="z-index:703;width: 14.291666666666rem;right:1.54166666666666rem;top:0.83333333333rem;position: fixed;"
+     ng-show="shadow">
+
+<div class="header tm">
+    <h4 style="padding-top:15px;text-align:center;color:white;">我的拼团</h4>
+    <div class="back" ng-click="back()">返回</div>
+</div>
+<div class="b" style="bottom:0px;">
+    <div class="body">
+        <div class="container" ng-repeat="team_group in team_group_list">
+            <div class="row" style="margin-top:10px;background-color:white;padding-bottom:10px;">
+                <div class="col-xs-9">
+                    <div class="p">拼团编号:{{team_group.teamGroupSn}}</div>
+                </div>
+                <div class="col-xs-3">
+                    <div class="p">{{team_group.teamStatusStr}}</div>
+                </div>
+            </div>
+
+            <div class="row"
+                 style="background-color: white;border:1px solid #c3c3c3;border-right-width:0px;border-left-width:0px;">
+
+                <div class="col-xs-5" style="color:#646464;text-align: left">
+                    收货人:{{team_group.receipt_address.receiver}}
+                </div>
+                <div class="col-xs-7" style="color:#646464;text-align:right">
+                    电话:{{team_group.receipt_address.telephone}}
+                </div>
+                <div class="col-xs-12" style="color:#646464;text-align:left">
+                    收货地址:{{team_group.receipt_address.receiptAddress}}
+                </div>
+            </div>
+
+            <div class="row"
+                 style="background-color: white;">
+                <div class="col-xs-4" style="padding-top:10px;text-align:center;">
+                    <img ng-src="{{team_group.goodsPicPath}}" width="100%">
+                </div>
+                <div class="col-xs-6" style="font-size:12px;padding-top:13px;">
+                    {{team_group.goodName}}
+                    <div class="p" style="padding-left:0px;">￥{{team_group.goodsPrice}}</div>
+                </div>
+                <div class="col-xs-2" style="font-size:12px;padding-top:13px;">
+                    <div style="display:inline-block;">&nbsp;x&nbsp;1</div>
+                </div>
+            </div>
+
+            <div class="row" style="background-color: white;">
+                <div class="col-xs-6">
+                    <div class="p">总价:￥{{team_group.goodsPrice}}</div>
+                </div>
+
+                <div class="col-xs-6">
+                    <div class="p"
+                         style="text-align:right;color:green;font-size:12px;" ng-click="share(team_group.teamId, team_group.goodsPicPath)"
+                         ng-show="team_group.teamStatus == '1' ? true : false">邀请好友
+                    </div>
+
+                    <div class="p" ng-click="confirm_receipt_shop_order(team_group.team_member_id)"
+                         style="text-align:right;color:green;font-size:12px;"
+                         ng-show="team_group.teamStatus == '5' ? true : false">确认收货
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="/static/singapore_telphone_web/market/js/angular.min.js"></script>
+<script src="/static/singapore_telphone_web/market/js/zepto.min.js"></script>
+<script src="/static/singapore_telphone_web/market/js/jweixin-1.0.0.js"></script>
+<script src="/static/singapore_telphone_web/market/js/common/toast.js"></script>
+<script src="/static/singapore_telphone_web/market/js/common/weixin_brige.js"></script>
+<script src="/static/singapore_telphone_web/market/js_controller/api.js"></script>
+
+<script src="js/team_my_order.js"></script>
+</body>
+</html>

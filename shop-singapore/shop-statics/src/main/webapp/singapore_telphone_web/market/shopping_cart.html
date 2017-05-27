@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Shopping</title>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/commons.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+
+<div class="header tm">
+    <h4 style="padding-top:15px;text-align:center;color:white;">购物车</h4>
+    <div class="edit" ng-click="is_edit()" ng-show="!is_edit_status">编辑</div>
+    <div class="edit" ng-click="save_shop_cart_goods()" ng-show="is_edit_status">保存</div>
+</div>
+
+<div class="body" style="padding-bottom:105px;">
+    <div class="container">
+            <div class="row" style="margin-top:10px;background-color:white;padding-bottom:10px;" ng-repeat="item in items">
+                <div class="col-xs-2" style="padding-top:22px;">
+                    <input type="checkbox" name="checkbox" ng-click="select_checkbox()" ng-value="item.id">
+                </div>
+                <div class="col-xs-3" style="padding-top:10px;text-align:center;">
+                    <img ng-src="{{item.goodsPic}}" width="100%">
+                </div>
+                <div class="col-xs-3" style="font-size:12px;padding-top:13px;">
+                    {{item.goodsName}}
+                    <div class="p" style="padding-left:0px;">￥{{item.goodsPrice}}</div>
+                </div>
+
+                <div class="col-xs-4" style="font-size:12px;padding-top:13px;">
+                    <div>
+                        <div style="background-color:orange;color:white;border-radius:10px;width:20px;height:20px;line-height:20px;text-align:center;float:right;"  ng-click="update_num(item.id, -1)" ng-show="is_edit_status">-</div>
+                        <div style="float:right;width:40px;text-align:center;height:20px;line-height:20px;"><div style="display:inline-block;" ng-show="!is_edit_status">&nbsp;x&nbsp;</div>{{item.num}}</div>
+                        <div style="background-color:orange;color:white;border-radius:10px;width:20px;height:20px;line-height:20px;text-align:center;float:right;" ng-click="update_num(item.id, 1)" ng-show="is_edit_status">+</div>
+                        <div style="clear:both;"></div>
+                    </div>
+                    <div style="margin-top:20px;color:red;text-align:center;" ng-click="delete_item(item.id)" ng-show="is_edit_status">删除</div>
+                </div>
+            </div>
+    </div>
+</div>
+
+<div class="container"
+     style="position:fixed;height:45px;left:0px;bottom:55px;right:0px;border:0px solid #fafafa;border-bottom-width:1px;">
+    <div class="row" style="background-color:white;">
+        <div class="col-xs-3" style="padding-top:13px;font-size:12px;color:#646464;">
+            <div style="float:left;width:30%;">
+                <input type="checkbox" id="checkbox_all" name="checkbox_all" ng-click="select_checkbox_all()">
+            </div>
+            <div style="float:left;padding-top:2px;">
+                <label for="checkbox_all" style="font-weight:normal;">全选</label>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+        <div class="col-xs-6 p" style="height:44px;text-align:right;padding-top:15px;" ng-show="!is_edit_status">
+            总价:￥{{total_price}}
+        </div>
+        <div class="col-xs-3"
+             style="background-color:orange;height:44px;text-align:center;padding-top:13px;color:white;" ng-click="buy()" ng-show="!is_edit_status">
+            结算
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-3" style="padding-top: 5px;text-align: center;">
+                <a href="index.html">
+                    <img ng-src="images/index.png" height="45">
+                </a>
+            </div>
+            <div class="col-xs-3" style="padding-top: 5px;text-align: center;">
+                <a href="shopping_cart.html">
+                    <img ng-src="images/shopping_car_s.png" height="45">
+                </a>
+                <div class="bubble" ng-show="is_show_cart_number">
+                    {{shop_cart_number}}
+                </div>
+            </div>
+            <div class="col-xs-3" style="padding-top: 5px;text-align: center;">
+                <a href="/static/singapore_telphone_web/market/modules/team_group/team_index.html">
+                    <img ng-src="images/open_group.png" height="45">
+                </a>
+            </div>
+            <div class="col-xs-3" style="padding-top: 5px;text-align: center;">
+                <a href="my.html">
+                    <img ng-src="images/my.png" height="45">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/angular.min.js"></script>
+<script src="js/zepto.min.js"></script>
+<script src="js_controller/cart.js"></script>
+<script src="js_controller/api.js"></script>
+<script src="js_controller/shopping_cart.js"></script>
+<script src="js/common/toast.js"></script>
+<script src="js/common/check_box_util.js"></script>
+
+</body>
+</html>

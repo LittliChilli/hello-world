@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shop.dao.ext.ShoppingCartMapperExt">
+
+ <resultMap id="BaseResultMap" type="java.util.HashMap">
+		<result column="id" property="id" />
+		<result column="user_id" property="userId" />
+		<result column="goods_id" property="goodsId" />
+		<result column="order_sn" property="orderSn" />
+		<result column="num" property="number" />
+		<result column="create_time" property="createTime" />
+		<result column="update_time" property="updateTime" />
+	</resultMap>
+
+	<select id="selectUserOrderDetailsByIds" resultMap="BaseResultMap">
+		SELECT
+		*
+		from mmfq_user_shopping_cart
+		WHERE id in
+		<foreach collection="cartIds" item="id" open="(" close=")"
+			separator=",">
+			#{id}
+		</foreach>
+	</select>
+
+
+	<resultMap id="UnionBaseResultMap" type="java.util.HashMap">
+		<result column="id" property="cartId" />
+		<result column="user_id" property="userId" />
+		<result column="num" property="number" />
+		<result column="goodsId" property="goodsId" />
+		<result column="goods_sn" property="goodsSn" />
+		<result column="goods_name" property="goodsName" />
+		<result column="goods_price" property="goodsPrice" />
+		<result column="goods_pic" property="goodsPic" />
+	</resultMap>
+
+	<select id="selectShopCart" resultMap="UnionBaseResultMap"
+		parameterType="java.util.HashMap">
+		SELECT
+		a.id,
+		a.num,
+		a.user_id,
+		b.id as goodsId,
+		b.goods_sn,
+		b.goods_name,
+		b.goods_price,
+		b.goods_pic
+		FROM
+		mmfq_user_shopping_cart a LEFT JOIN
+		mmfq_goods b ON a.goods_id = b.id
+		WHERE
+		a.order_sn is NULL
+		<if test="userId != null and userId !=''">
+			AND a.user_id = #{userId,jdbcType=INTEGER}
+		</if>
+
+		order by a.create_time desc
+	</select>
+
+	<resultMap id="shoppingListResult" type="com.shop.entity.excel.ShoppingExportExcel">
+		<result column="totalNum" property="totalNum" />
+		<result column="goods_name" property="goodsName" />
+		<result column="totalGoodsPrice" property="totalGoodsPrice" />
+	</resultMap>
+	<select id="selectShoppingList" resultMap="shoppingListResult"
+		parameterType="java.util.HashMap">
+		SELECT
+			b.goods_name,
+			sum(b.num) AS totalNum,
+			sum(b.goods_price * b.num) AS totalGoodsPrice
+		FROM
+			mmfq_user_order a,
+			mmfq_user_order_details b,
+			mmfq_goods c
+		WHERE
+			a.order_sn = b.order_sn
+		AND b.goods_id = c.id
+		<if test="orderStatus != null and orderStatus !=''">
+			AND a.order_status = #{orderStatus}
+		</if>
+		<if test="receiptAddress != null and receiptAddress !=''">
+			AND a.receive_address like "%"#{receiptAddress}"%" 
+		</if>
+		<if test="startTime != null">
+			AND a.create_time <![CDATA[>=]]>
+			#{startTime,jdbcType=TIMESTAMP}
+		</if>
+		<if test="endTime != null">
+			AND a.create_time <![CDATA[<=]]>
+			#{endTime,jdbcType=TIMESTAMP}
+		</if>
+		GROUP BY
+			b.goods_id
+		ORDER BY
+			c.category_id
+	</select>
+	
+</mapper>

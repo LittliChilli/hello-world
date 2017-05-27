@@ -1,0 +1,105 @@
+/*
+* @description: 账单样式
+* @author: 周日恒
+* @update: 周日恒 (2015-10-30 18:32)
+*/
+.limit-title{
+    font-size: 1.25rem;
+    color:rgba(255,0,0,1);
+    text-align: center;
+    margin-top: 1.5rem;
+}
+.limit{
+    float: left;
+    width:8.75rem;
+    height: 8.75rem;
+    margin: 1.666666666rem 0 1.666666666rem 8.95833333333rem;
+    background-color: #00b7ee;
+    border-radius: 100%;
+}
+.limit p{
+    float: left;
+    text-align: center;
+    color:#fff;
+    width: 100%;
+}
+.limit p:nth-child(1){
+    margin-top: 2.166666666rem;
+}
+.limit p:nth-child(3){
+    height: 1.25rem;
+    font-size: 1.25rem;
+    margin-top: 0.8333333333rem;
+}
+.limit-text-1{
+    color:rgba(102,102,102,1);
+    height: 1.0833333333rem;
+    font-size: 1.08333333333rem;
+    clear: both;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.75rem;
+}
+.limit-text-1 span{
+    color: #ff517a;
+}
+.line-abs-top346{
+    position: absolute;
+    top: 14.416666666rem;
+}
+.limit-text-2 {
+    margin: 0 9.5rem;
+    width: 7.666666666rem;
+    background-color: #FFFFFF;
+    text-align: center;
+    clear: both;
+    color: #cccccc;
+}
+.top-12px {
+    float: left;
+    margin: 0.5rem 0 0 0;
+}
+.limit-itme{
+    width: 100%;
+    float: left;
+}
+.limit-itme p:nth-child(1){
+    height: 3.5833333333rem;
+    line-height: 3.583333333333rem;
+    margin-left:1.66666666rem;
+    float: left;
+}
+.limit-itme p:nth-child(2){
+    color: #ff517a;
+    height: 3.5833333333rem;
+    line-height: 3.583333333333rem;
+    margin-right:1.66666666rem;
+    float: right;
+}
+.limit-itme-not{
+    width: 100%;
+    float: left;
+}
+.limit-itme-not img{
+    width: 4rem;
+    height: 4rem;
+    float: left;
+    margin: 2.1666666666rem 0 0.8333333333rem 11.33333333333rem;
+}
+.limit-itme-not p{
+    width: 100%;
+    float: left;
+    margin-left: 8.1666666666rem;
+    color:#ccc;
+}
+.up-money{
+    width:25rem;
+    height: 3.3333333333rem;
+    line-height: 3.3333333333rem;
+    text-align: center;
+    margin:1.666666666rem auto;
+    color:white;
+    background-color: rgba(255,81,122,1);
+    clear: both;
+    border-radius: 0.3rem;
+}

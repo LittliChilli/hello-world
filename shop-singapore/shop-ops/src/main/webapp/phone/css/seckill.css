@@ -1,0 +1,152 @@
+/*
+* @description: 缇庢湡鎯犵殑鏍峰紡.
+* @author: 鍛ㄦ棩鎭�
+* @update: 鍛ㄦ棩鎭� (2015-10-18 15:00)
+*/
+.swipe_wrap {
+    background: #FFFFFF;
+    position:relative;
+    overflow: hidden;
+    width: 100%;
+}
+.swipe-img {
+    position: relative;
+    width: 100%;
+    padding-top: 6.25rem;
+}
+#J-slider,
+#J-slider li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% ;
+    visibility: visible;
+}
+#J-slider li a{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+#j-pointers {
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    margin: 0 auto;
+    height: 20px;
+    line-height: 20px;
+}
+#j-pointers i {
+    display: inline-block;
+    margin-left: 4px;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 6px;
+    /*opacity: .5;*/
+}
+#j-pointers i:first-child {
+    margin-left: 0;
+}
+#j-pointers i.active {
+    background-color: #ff517a;
+}
+.time-text{
+    border-left: 0.25rem solid #ff517a;
+    height: 2.8333333333rem;
+    color: #ff517a;
+    line-height: 2.8333333333rem;
+    padding-left: 0.4166666666rem;
+}
+.item-box{
+    position: relative;
+    height: 10rem;
+    margin: 0.4166666666rem 0 0.4166666666rem 0.8333333333rem;
+}
+.item-box img {
+    float: left;
+    width: 10rem;
+    height: 10rem;
+    margin-right: 1.6666666666rem;
+}
+.item-text {
+	width:13.3333333333rem;
+    float: left;
+}
+.item-text p:nth-child(1){
+    line-height: 1.0833333333rem;
+    margin-top: 0.83333333333rem;
+    font-size: 1.0833333333rem;
+    margin-bottom: 0.8333333333rem;
+    color: #404040;
+}
+.item-text p:nth-child(2){
+    line-height: 1.0833333333rem;
+    font-size: 1.0833333333rem;
+    margin-bottom: 2.416666666666rem;
+    color: #666666;
+}
+
+.item-text p:nth-child(3) {
+    line-height: 1rem;
+    width: 100%;
+    margin-bottom: 0.83333333333rem;
+    clear: both;
+    float: left;
+    color: #666;
+}
+
+.item-text p:nth-child(4) {
+    line-height: 1.25rem;
+    float: left;
+    color: #ff517a;
+    font-size: 1.25rem;
+    margin-bottom: 0.1rem;
+}
+
+.item-text p:nth-child(4) span {
+    font-size: 1rem;
+}
+.item-text p:nth-child(5) {
+    float: right;
+    color: #666;
+}
+.item-text  div{
+    width: 2.1666666666rem;
+    height: 1.25rem;
+    line-height: 1.25rem;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 0.8333333333rem;
+    border-radius: 4px;
+    margin-bottom: 0.8333333333rem;
+}
+.item-text  div span{
+    position: relative;
+    top: 0.05rem;
+}
+.shadow{
+    position: absolute;
+    left: 0;
+    top:8.3333333333rem;
+    background-color: #000000;
+    opacity: 0.7;
+    width: 10rem;
+    height: 1.6666666666rem;
+}
+.tiem{
+    position: absolute;
+    left: 0.4166666666rem;
+    top:8.6666666666rem;
+    color: #fff;
+}
+.end{
+    opacity: 0.5;
+}

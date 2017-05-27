@@ -1,0 +1,51 @@
+#parse("./back/inc/base.vm")
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>$title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content="Modern Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design"/>
+    <script type="application/x-javascript"> addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    } </script>
+    <!-- Bootstrap Core CSS -->
+    <link href="/miao/css/bootstrap.min.css" rel='stylesheet' type='text/css'/>
+	
+	<link href="/miao/css/cs.css" rel='stylesheet' type='text/css'/>
+	
+    <!-- Custom CSS -->
+    <link href="/miao/css/style.css" rel='stylesheet' type='text/css'/>
+    <!--直接从网络加载字体，解决加载本地字体失败的问题-->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!--<link href='http://fonts.useso.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>-->
+
+    <link href="/miao/css/custom.css" rel="stylesheet">	
+	
+	<!-- 自动弹窗CSS -->
+	<link href="/miao/css/notifications.css" rel="stylesheet">	
+		
+    <!-- 界面提示信息弹出框CSS -->
+    <link rel="stylesheet" type="text/css" href="/miao/css/box.css">
+		
+    <!-- jQuery -->
+    <script src="/miao/js/jquery.min.js"></script>
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="/miao/js/metisMenu.min.js"></script>
+	<script src="/miao/js/nav.js">
+    </script>
+    <script src="/miao/js/custom.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/miao/js/bootstrap.min.js"></script>
+    <!-- 公共提示信息/校验等 -->
+    <script src="/miao/js/common/common_tip.js"></script>
+	<script src="/miao/js/common/sys_msg_text.js"></script>
+	<!-- 分页 -->
+	<script src='/miao/js/common/paginator_ajax.js'></script>
+	
+</head>

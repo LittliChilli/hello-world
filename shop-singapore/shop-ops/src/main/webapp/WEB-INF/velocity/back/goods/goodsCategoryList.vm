@@ -1,0 +1,62 @@
+#set($title="商品类别列表")
+
+#parse("./back/inc/header.vm")
+<link rel="stylesheet" type="text/css" href="/miao/css/base.css">
+<link rel="stylesheet" type="text/css" href="/miao/css/moban.css">
+#parse("./back/inc/nav.vm")
+
+<body>
+<div class="wrap">
+		<div class="cent">
+			<div class="head">$title</div>
+			<div class="input-box">
+				<div>
+					<button class="btn btn-success" id="searchGoodsCategory">查询</button>
+					<div class="btn btn-success" id="addGoodsCategory">添加类别</div>
+                </div>
+	        </div>
+            <div class="table-width">
+				<table style="width:100%;" class="table" cellspacing="0">
+                   <thead >
+                    <tr><th><input type="checkbox" id="checkAll" onclick="checkAll('checkAll')"/></th>
+						<th style="width:50%;text-align:center;">类别名称</th>
+						<th style="width:50%;text-align:center;">操作</th>
+                    </tr>
+					</thead>
+                    <tbody id="tbodyGoodsCategory"></tbody>
+                </table>
+			</div>
+			<div class="table-foot">
+				<div style="Float:right;margin-right:30px;" id="pageGoodsCategory"></div>
+			</div>
+        </div>
+		<div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h2 class="modal-title">类别名称</h2>
+                    </div>
+					<div class="modal-body">
+						<div id="goodsCategoryModalDiv">
+							<input class='form-control1' id="goodsCategoryInput"/>
+							<input type="hidden" id="goodsCategoryId"/>
+						</div>
+						<div>
+                            <span style="color:red;" id="errMsg"></span>
+                        </div>
+						<div class="modal-footer">
+							<button class="btn-success btn" type="button" onclick="goodsCategoryConfrimButton()">确认</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+</div>
+			
+<script type="text/javascript" src="/miao/js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="/miao/js/laydate/laydate.js"></script>
+<script type="text/javascript" src="/miao/js/goods/goodsCategoryList.js"></script>
+</body>
+#parse("./back/inc/footer.vm")
+</html>

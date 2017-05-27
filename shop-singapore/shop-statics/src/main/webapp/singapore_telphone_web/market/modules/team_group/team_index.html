@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Shopping</title>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="/static/singapore_telphone_web/market/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/singapore_telphone_web/market/css/commons.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="/static/singapore_telphone_web/market/js/html5shiv.min.js"></script>
+    <script src="/static/singapore_telphone_web/market/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+<div class="header tm">
+    <h4 style="padding-top:15px;text-align:center;color:white;">拼团</h4>
+</div>
+<div class="body">
+    <div style="padding-left:0px;padding-right:0px;width:100%"
+         ng-repeat="goods_category in goods_category_list">
+        <div style="color:green;padding-left:2px;padding-top:5px;" ng-show="false">
+            {{goods_category.categoryName}}
+        </div>
+        <div style="float:left;width:50%;padding-left:2px;padding-right:2px;padding-top:5px;"
+             ng-repeat="goods in goods_category.goods_list">
+            <div style="width:100%;background-color:white;" ng-click="detail(goods.id)">
+                <img ng-src="{{goods.goodsPic}}" width="100%" height="auto">
+                <div class="des" style="text-overflow:ellipsis;white-space:nowrap;overflow:hidden;">{{goods.goodsName}}</div>
+                <div class="p">价格:{{goods.goodsPrice}}</div>
+                <div class="p">{{goods.goodsGroupNumLimit}}人团</div>
+            </div>
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+</div>
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-3" style="padding-top: 5px;text-align: center;">
+                <a href="/static/singapore_telphone_web/market/index.html">
+                    <img ng-src="/static/singapore_telphone_web/market/images/index.png" height="45">
+                </a>
+            </div>
+            <div class="col-xs-3" style="padding-top: 5px;text-align: center;">
+                <a href="/static/singapore_telphone_web/market/shopping_cart.html">
+                    <img ng-src="/static/singapore_telphone_web/market/images/shopping_cart.png" height="45">
+                </a>
+                <div class="bubble" ng-show="is_show_cart_number">
+                    {{shop_cart_number}}
+                </div>
+            </div>
+            <div class="col-xs-3" style="padding-top: 5px;text-align: center;">
+                <a href="/static/singapore_telphone_web/market/modules/team_group/team_index.html">
+                    <img ng-src="/static/singapore_telphone_web/market/images/open_group_s.png" height="45">
+                </a>
+            </div>
+            <div class="col-xs-3" style="padding-top: 5px;text-align: center;">
+                <a href="/static/singapore_telphone_web/market/my.html">
+                    <img ng-src="/static/singapore_telphone_web/market/images/my.png" height="45">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="/static/singapore_telphone_web/market/js/angular.min.js"></script>
+<script src="/static/singapore_telphone_web/market/js/zepto.min.js"></script>
+<script src="/static/singapore_telphone_web/market/js_controller/api.js"></script>
+<script src="/static/singapore_telphone_web/market/js/common/toast.js"></script>
+
+<script src="js/team_index.js"></script>
+</html>

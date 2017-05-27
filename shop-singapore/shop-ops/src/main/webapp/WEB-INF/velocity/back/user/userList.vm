@@ -1,0 +1,71 @@
+#set($title="用户列表")
+
+#parse("./back/inc/header.vm")
+<link rel="stylesheet" type="text/css" href="/miao/css/base.css">
+<link rel="stylesheet" type="text/css" href="/miao/css/moban.css">
+#parse("./back/inc/nav.vm")
+
+<body>
+<div class="wrap">
+		<div class="cent">
+			<div class="head">$title</div>
+					<form id="searchUser-form" name = "searchUser-form" enctype="multipart/form-data" method="GET">
+                    <div class="input-box">
+						<div><span>帐号：</span>
+						 <input type="text" id="loginName" name="loginName" />
+                        </div>
+						<div><span>注册开始时间：</span>
+							<input id="startDate" name="startDate" class="laydate-icon" onclick="laydate({istime: true, format: 'YYYY-MM-DD'})"/>
+                        </div>
+						<div><span>注册结束时间：</span>
+							<input id="endDate" name="endDate" class="laydate-icon" onclick="laydate({istime: true, format: 'YYYY-MM-DD'})"/>
+						</div>
+					</div>
+					</form>
+					<div class="input-box">
+    					<div style="widht:400px;">
+    						<button class="btn btn-success" id="searchUser">查询</button>
+                        </div>
+			        </div>
+                <div class="table-width">
+					<table style="width:100%;" class="table" cellspacing="0">
+                       <thead >
+                        <tr><th><input type="checkbox" id="checkAll" onclick="checkAll('checkAll')"/></th>
+							<th style="width:25%;text-align:center;">帐号</th>
+							<th style="width:25%;text-align:center;">昵称</th>
+							<th style="width:25%;text-align:center;">注册时间</th>
+							<th style="width:25%;text-align:center;">操作</th>
+                        </tr>
+						</thead>
+                        <tbody id="tbodyUser"></tbody>
+                    </table>
+				</div>
+				<div class="table-foot">
+					<div style="Float:right;margin-right:30px;" id="pageUser"></div>
+				</div>
+        </div>
+		<div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h2 class="modal-title">收货地址</h2>
+                    </div>
+					<div class="modal-body">
+						<div id="userReceiptAddressDiv">
+						</div>
+						<div class="modal-footer">
+							<button class="btn-success btn" type="button" onclick="addressConfrimButton()">确认</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+</div>
+			
+<script type="text/javascript" src="/miao/js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="/miao/js/laydate/laydate.js"></script>
+<script type="text/javascript" src="/miao/js/user/userList.js"></script>
+</body>
+#parse("./back/inc/footer.vm")
+</html>

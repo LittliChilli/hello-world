@@ -1,0 +1,810 @@
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+address,
+img,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-weight: normal;
+    font-variant: normal;
+    font-style: normal;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #eeeeee;
+}
+
+.header {
+    height: 30px;
+    background: #00a1e7;
+    color: #FFFFFF;
+    line-height: 30px;
+}
+
+.header a.nav-back {
+    float: left;
+    height: 100%;
+    width: 15px;
+    padding: 0 5% 0 3.75%;
+}
+
+.header a.nav-back span {
+    display: block;
+    width: 12px;
+    height: 12px;
+    margin-top: 8px;
+    border-style: solid;
+    border-color: #ffffff;
+    border-width: 2px 0 0 2px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.header a.nav-right {
+    padding-right: 20px;
+    line-height: 44px;
+    float: right;
+    display: inline-block;
+    height: 100%;
+    font-size: 16px;
+    color: #000;
+}
+
+.header p {
+    font-style: normal;
+    float: right;
+    margin-right: 20%;
+    width: 60%;
+    text-align: center;
+    font-size: 18px;
+}
+
+.nav-check {
+    background-color: #888d8c;
+    width: 100%;
+    height: 83px;
+    clear: both;
+}
+
+.nav-check b {
+    color: #ffffff;
+    font-size: 36px;
+    float: left;
+    margin: 5px 0 0 20px;
+    width: 80%;
+}
+
+.nav-check p {
+    float: left;
+    font-family: "Microsoft YaHei", sans-serif;
+    font-size: 8px;
+    margin: 10px 0 0 20px;
+    width: 80%;
+    color: #bcc7c4;
+}
+
+.nav-balance {
+    width: 100%;
+    height: 45px;
+    clear: both;
+    background-color: #ffffff;
+}
+
+.nav-balance p {
+    float: left;
+    font-family: "Microsoft YaHei", sans-serif;
+    font-size: 16px;
+    margin: 10px 0 0 20px;
+}
+
+.nav-balance b {
+    font-size: 16px;
+    float: right;
+    margin: 10px 20px 0 0;
+    font-family: "Microsoft YaHei", sans-serif;
+}
+
+.balance-title {
+    width: 100%;
+    height: 40px;
+    clear: both;
+    background-color: #eeeeee;
+}
+
+.balance-title p {
+    float: left;
+    font-family: "Microsoft YaHei", sans-serif;
+    font-size: 8px;
+    margin: 20px 0 0 20px;
+    color: #65675e;
+}
+
+.balance-title p b {
+    font-size: 6px;
+    color: #919289;
+    font-weight: normal;
+}
+
+.line-back {
+    width: 100%;
+    background-color: #ffffff;
+}
+
+.checked-line {
+    width: 93%;
+    margin: 0 auto;
+    height: 55px;
+    clear: both;
+    font-family: "Microsoft YaHei", sans-serif;
+    background-color: #ffffff;
+}
+
+.checked-line img {
+    float: right;
+    position: relative;
+    top: 18px;
+    text-align: right;
+    height: 20px;
+    line-height: 55px;
+}
+
+.checked-line p b {
+    color: #919289;
+    font-size: 6px;
+    float: left;
+    margin: 5px 0 0 20px;
+    width: 80%;
+    line-height: normal;
+}
+
+.checked-line p {
+    float: left;
+    font-family: "Microsoft YaHei", sans-serif;
+    font-size: 12px;
+    margin: 5px 0 0 0;
+    width: 60%;
+}
+
+.checked-line b {
+    font-size: 14px;
+    float: right;
+    line-height: 55px;
+    margin-right: 12px;
+}
+
+.line-not-border {
+    height: 2px;
+    background-color: #eeeeee;
+    width: 100%;
+    clear: both;
+}
+
+.credit-btn {
+    padding: 10px;
+}
+
+.credit-btn a, .credit-btn button {
+    display: inline-block;
+    background: #00a1e7;
+    height: 35px;
+    width: 100%;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 5px;
+    line-height: 35px;
+    margin: 7px 0 0 0;
+}
+
+.credit-btn button {
+    border: hidden;
+}
+
+.fixed {
+    background-color: #ffffff;
+    height: 49px;
+    width: 100%;
+    padding: 0 10px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    z-index: 700;
+}
+
+.fixed-pre {
+    background-color: #00a1e7;
+}
+
+.fixed-pre p {
+    width: 60%;
+    float: left;
+    margin: 10px 0 0 10%;
+    color: #FFFFff;
+}
+
+.fixed-back-pre p {
+    float: left;
+    margin: 0 0 0 24px;
+    font-size: 18px;
+    color: #FFFFff;
+    height: 100%;
+    line-height: 49px;
+}
+
+.nav {
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+    font-size: 14px;
+    height: 20px;
+    line-height: 20px;
+}
+
+.nav p {
+    margin: 0 2%;
+    text-align: left;
+    float: left;
+}
+
+.nav b {
+    font-style: normal;
+}
+
+.back-img {
+    position: relative;
+    margin: 2% 0 0 2%;
+    width: 98%;
+}
+
+.back-img img {
+    width: 100%;
+}
+
+.circle {
+    opacity: 0.8;
+    width: 50%;
+    height: 33.6%;
+    margin: 25% 0 0 25%;
+    text-align: center;
+    color: #000000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 100%;
+    background-color: #ffffff;
+    font-size: 16px;
+}
+
+.circle div:nth-child(1) {
+    margin-top: 32%;
+}
+
+.circle div:nth-child(2) {
+    margin-top: 5%;
+}
+
+.circle div:nth-child(3) {
+    margin-top: 5%;
+}
+
+.circle div:nth-child(3) span {
+    border: solid 1px #00a1e7;
+    border-radius: 4px;
+    padding: 3px;
+}
+
+.circle div:nth-child(4) {
+    margin-top: 7px;
+    color: #f01b64;
+    font-size: 8px;
+    text-align: center;
+    display: none;
+}
+
+.circle div {
+    color: #00a1e7;
+}
+
+.refund {
+    width: 98%;
+    margin: 110% 0 0 1px;
+    text-align: center;
+    color: #000000;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+}
+
+.refund p {
+    float: left;
+    font-family: "Microsoft YaHei", sans-serif;
+    font-size: 16px;
+    margin: 10px 0 0 20px;
+}
+
+.refund b {
+    font-size: 16px;
+    float: right;
+    margin: 10px 20px 0 0;
+    font-family: "Microsoft YaHei", sans-serif;
+    color: #000000;
+}
+
+.refund b:nth-child(2) {
+    color: #cccccc;
+}
+
+.good {
+    background-color: #ffffff;
+    width: 100%;
+    height: 83px;
+    clear: both;
+}
+
+.good b {
+    font-size: 36px;
+    float: left;
+    margin: 5px 0 0 20px;
+    width: 80%;
+}
+
+.good p {
+    float: left;
+    font-family: "Microsoft YaHei", sans-serif;
+    font-size: 8px;
+    margin: 10px 0 0 20px;
+    width: 80%;
+    color: #bcc7c4;
+}
+
+.detail-line {
+    height: 42px;
+    background-color: #ffffff;
+    line-height: 42px;
+}
+
+.detail-line p {
+    margin: 0 auto;
+    width: 90%;
+    color: #4e5859;
+    font-size: 12px;
+}
+
+.detail-line p b {
+    margin-left: 16px;
+    color: #898c8d;
+    font-weight: normal;
+}
+
+.detail-line p b:nth-child(2) {
+    float: right;
+}
+
+.re-good {
+    background-color: #FFFFff;
+    height: 40%;
+    text-align: center;
+    float: left;
+    width: 100%;
+}
+
+.re-good div {
+    width: 30%;
+    margin: 25px auto 17px auto;
+}
+
+.re-good p {
+    font-size: 18px;
+}
+
+.re-good p:nth-child(3) {
+    font-size: 30px;
+}
+
+.re-good {
+    background-color: #FFFFff;
+    height: 40%;
+    text-align: center;
+    float: left;
+    width: 100%;
+}
+
+.re-good div {
+    width: 30%;
+    margin: 25px auto 17px auto;
+}
+
+.re-good p {
+    font-size: 18px;
+}
+
+.re-good p:nth-child(3) {
+    font-size: 30px;
+}
+
+/*没有数字的复选框样式*/
+.checkboxFour {
+    float: left;
+    width: 20px;
+    height: 20px;
+    background: #ddd;
+    margin: 15px 7px 0 7px;
+    border-radius: 10%;
+    position: relative;
+    /*-webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.5);*/
+    /*-moz-box-shadow: 0px 1px 3px rgba(0,0,0,0.5);*/
+    /*box-shadow: 0px 1px 3px rgba(0,0,0,0.5);*/
+}
+
+.checkboxFour label {
+    opacity: 0;
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 100px;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    transition: all .5s ease;
+    cursor: pointer;
+    position: absolute;
+    top: 2.5px;
+    left: 2.5px;
+    z-index: 1;
+    background: #ddd;
+    /*-webkit-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);*/
+    /*-moz-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);*/
+    /*box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);*/
+}
+
+.checkboxFour input[type=checkbox]:checked + label {
+    background: #00a1e7;
+    opacity: 1;
+}
+
+/*没有数字的复选框样式-end*/
+
+/*有数字的复选框样式*/
+.checkbox-number {
+    float: left;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #eeeeee;
+    margin: 15px 7px 0 7px;
+    border-radius: 100%;
+    position: relative;
+    /*-webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.5);*/
+    /*-moz-box-shadow: 0px 1px 3px rgba(0,0,0,0.5);*/
+    /*box-shadow: 0px 1px 3px rgba(0,0,0,0.5);*/
+}
+
+.checkbox-number label {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 100px;
+    /*-webkit-transition: all .5s ease;*/
+    /*-moz-transition: all .5s ease;*/
+    /*-o-transition: all .5s ease;*/
+    /*-ms-transition: all .5s ease;*/
+    /*transition: all .5s ease;*/
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    text-align: center;
+    line-height: 20px;
+    color: #eeeeee;
+    /*-webkit-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);*/
+    /*-moz-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);*/
+    /*box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);*/
+}
+
+.checkbox-number input[type=checkbox]:checked + label {
+    background: #00a1e7;
+    opacity: 1;
+    color: #FFFFff;
+    top: -3px;
+    left: -3px;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+}
+
+/*有数字的复选框样式-end*/
+.checked-line-good {
+    width: 93%;
+    margin: 0 auto;
+    height: 55px;
+    clear: both;
+    font-family: "Microsoft YaHei", sans-serif;
+    background-color: #ffffff;
+    line-height: 55px;
+}
+
+.checked-line-good p {
+    float: left;
+    font-family: "Microsoft YaHei", sans-serif;
+    font-size: 12px;
+    width: 60%;
+    font-weight: bold;
+}
+
+.checked-line-good b {
+    font-size: 12px;
+    float: right;
+    margin-right: 12px;
+    color: #00a1e7;
+}
+
+.nav-header {
+    height: 30px;
+    color: #f01b64;
+    background-color: #FFFFff;
+    line-height: 30px;
+}
+
+.nav-header a.nav-back {
+    float: left;
+    height: 100%;
+    width: 15px;
+    padding: 0 5% 0 3.75%;
+}
+
+.nav-header a.nav-back span {
+    display: block;
+    width: 12px;
+    height: 12px;
+    margin-top: 8px;
+    border-style: solid;
+    border-color: #65675e;
+    border-width: 2px 0 0 2px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.nav-header a.nav-right {
+    padding-right: 12px;
+    float: right;
+    display: inline-block;
+    height: 100%;
+    font-size: 14px;
+    color: #eeeeee;
+    line-height: 30px;
+}
+
+.nav-header p {
+    font-style: normal;
+    float: right;
+    margin-left: 20%;
+    width: 60%;
+    text-align: center;
+    font-size: 18px;
+    position: absolute;
+}
+
+.sum-text {
+    border-radius: 10px;
+    width: 94%;
+    height: 100px;
+    overflow: auto;
+}
+
+.lr-auto {
+    width: 90%;
+    margin: 12px auto;
+    color: #f01b64;
+
+}
+
+.font-size-14px {
+    font-size: 14px;
+}
+
+.font-size-8px {
+    font-size: 8px;
+}
+
+.dow {
+    display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background: #fff;
+    color: #eeeeee;
+    text-decoration: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    float: left;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 24px;
+}
+
+.dow:checked {
+    border: 0;
+}
+
+/*.dow:hover{background:#1165ae;}*/
+/*.dow:active{background:#0d79d5;}*/
+
+.app-good {
+    background-color: #eeeeee;
+    height: 40%;
+    text-align: center;
+    float: left;
+    width: 100%;
+}
+
+.app-good div {
+    width: 30%;
+    margin: 25px auto 17px auto;
+}
+
+.app-good p {
+    font-size: 12px;
+}
+
+.app-good p:nth-child(2) {
+    font-size: 18px;
+    color: #f01b64;
+}
+
+.msg {
+    width: 90%;
+    left: 5%;
+    background-color: #f01b64;
+    /*font-size: 12px;*/
+    color: #FFFFff;
+    border-radius: 10px;
+}
+
+.affirm-div {
+    background-color: #ffffff;
+    width: 100%;
+    height: 65%
+}
+
+.affirm-div .h {
+    font-size: 18px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.affirm-div .b {
+    font-size: 12px;
+    height: 50px;
+    line-height: 50px;
+    margin: 0 12px 0 24px;
+    color: #eeeeee;
+    border-bottom: 2px solid #eeeeee;
+}
+
+.affirm-div .b span {
+    float: right;
+}
+
+.affirm-div .b img {
+    float: right;
+    height: 15px;
+    margin: 17px 0 0 12px;
+}
+
+.affirm-moeny {
+    height: 50px;
+    line-height: 50px;
+    margin: 0 32px 0 24px;
+    font-size: 14px;
+}
+
+.affirm-moeny b {
+    float: right;
+    font-size: 16px;
+}
+
+/*Custom checkbox*/
+/*.check-box {*/
+/*width: 22px;*/
+/*height: 22px;*/
+/*cursor: pointer;*/
+/*display: inline-block;*/
+/*margin: 15px 7px 0 0;*/
+/*position: relative;*/
+/*overflow: hidden;*/
+/*box-shadow: 0 0 1px #ccc;*/
+/*-webkit-border-radius: 3px;*/
+/*-moz-border-radius: 3px;*/
+/*border-radius: 6px;*/
+/*background: rgb(255, 255, 255);*/
+/*background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%);*/
+/*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(47%, rgba(246, 246, 246, 1)), color-stop(100%, rgba(237, 237, 237, 1)));*/
+/*background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%);*/
+/*background: -o-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%);*/
+/*background: -ms-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%);*/
+/*background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%);*/
+/*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed', GradientType=0);*/
+/*border: 1px solid #ccc;*/
+/*float: left;*/
+/*}*/
+/*.check-box i {*/
+/*background: url("../img/check/bank.png") no-repeat center center;*/
+/*position: absolute;*/
+/*left: 3px;*/
+/*bottom: -15px;*/
+/*width: 16px;*/
+/*height: 16px;*/
+/*opacity: .5;*/
+/*-webkit-transition: all 400ms ease-in-out;*/
+/*-moz-transition: all 400ms ease-in-out;*/
+/*-o-transition: all 400ms ease-in-out;*/
+/*transition: all 400ms ease-in-out;*/
+/*-webkit-transform:rotateZ(-180deg);*/
+/*-moz-transform:rotateZ(-180deg);*/
+/*-o-transform:rotateZ(-180deg);*/
+/*transform:rotateZ(-180deg);*/
+/*}*/
+/*.checkedBox {*/
+/*-moz-box-shadow: inset 0 0 5px 1px #ccc;*/
+/*-webkit-box-shadow: inset 0 0 5px 1px #ccc;*/
+/*box-shadow: inset 0 0 5px 1px #ccc;*/
+/*border-bottom-color: #fff;*/
+/*}*/
+/*.checkedBox i {*/
+/*bottom: 3px;*/
+/*-webkit-transform:rotateZ(0deg);*/
+/*-moz-transform:rotateZ(0deg);*/
+/*-o-transform:rotateZ(0deg);*/
+/*transform:rotateZ(0deg);*/
+/*}*/
+.checkboxFour input[type=checkbox] {
+    visibility: hidden;
+}
+
+.checkbox-number input[type=checkbox] {
+    visibility: hidden;
+}

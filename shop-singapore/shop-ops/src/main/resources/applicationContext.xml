@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd">
+
+    <!-- Enable autowire -->
+    <context:component-scan base-package="com.shop"/>
+    <context:annotation-config/>
+    <aop:aspectj-autoproxy/>
+
+    <bean id="propertyConfigurer"
+          class="com.shop.common.readconfig.PropertyPlaceholderConfigurer">
+        <property name="ignoreResourceNotFound" value="true"/>
+        <property name="locations">
+            <list>
+                <value>classpath*:/application.properties</value>
+                <value>classpath*:/config/config.properties</value>
+                <value>classpath*:/config/log4j.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- 配置连接池 -->
+    <bean id="parentDataSource" class="com.jolbox.bonecp.BoneCPDataSource">
+        <property name="idleConnectionTestPeriodInSeconds" value="${bonecp.idleConnectionTestPeriodInSeconds}"/>
+        <property name="idleMaxAgeInSeconds" value="${bonecp.idleMaxAgeInSeconds}"/>
+        <property name="maxConnectionsPerPartition" value="${bonecp.maxConnectionsPerPartition}"/>
+        <property name="minConnectionsPerPartition" value="${bonecp.minConnectionsPerPartition}"/>
+        <property name="partitionCount" value="${bonecp.partitionCount}"/>
+        <property name="acquireIncrement" value="${bonecp.acquireIncrement}"/>
+        <property name="statementsCacheSize" value="${bonecp.statementsCacheSize}"/>
+        <property name="releaseHelperThreads" value="${bonecp.releaseHelperThreads}"/>
+    </bean>
+
+    <bean id="dataSource" parent="parentDataSource" destroy-method="close">
+        <property name="driverClass" value="${jdbc.driverClassName}"/>
+        <property name="jdbcUrl" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+
+    <!-- 配置事务管理器 -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!-- 使用annotation定义事务 -->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+    <!-- define the SqlSessionFactory -->
+    <!-- p:transactionFactory-ref="transactionFactory" -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean"
+          p:dataSource-ref="dataSource"
+          p:configLocation="classpath:mybatis-config.xml"
+          p:typeAliasesPackage="com.shop.entity">
+        
+        <property name="mapperLocations">
+            <list>
+                <value>classpath:com/shop/dao/mapper/*.xml</value>
+                <value>classpath:com/shop/dao/mapperExt/*.xml</value>
+            </list>
+        </property>
+    </bean> 
+    
+    <!-- 扫描basePackage下所有以@MyBatisRepository标识的 接口 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer" p:basePackage="com.shop.dao"/>
+
+    <bean id='sqlSession' class='org.mybatis.spring.SqlSessionTemplate'>
+        <constructor-arg index='0' ref='sqlSessionFactory'/>
+    </bean>
+
+    <import resource="classpath*:/applicationContext-service.xml"/>
+
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+    
+    <!-- 自定义异常统一处理   -->
+    <bean id="exceptionResolver" class="com.shop.service.handler.ExceptionHandler"/>
+    
+    
+    
+    
+    <!-- 超过拼团有效时间未成团订单系统置为失败 -->
+	<bean id="changeTeamGroupStatusOverTime"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="changeTeamGroupOverTimeTigger"></property><!-- 指定任务类 -->
+		<property name="targetMethod" value="changeTeamGroupStatus"></property><!-- 指定任务方法 -->
+	</bean>
+
+	<!-- 超过拼团有效时间未成团订单系统置为失败 -->
+	<bean id="changeTeamGroupStatusOverTimeTigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="changeTeamGroupStatusOverTime"></property>
+		<property name="cronExpression">
+			<!-- 每10分钟触发一次 -->
+			<value>0 0/10 * * * ?</value>
+		</property>
+	</bean>
+    
+    
+    	<!-- 启动定时器 -->
+	<bean id="startJob"
+		class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref bean="changeTeamGroupStatusOverTimeTigger" />
+			</list>
+		</property>
+	</bean>
+    
+</beans>

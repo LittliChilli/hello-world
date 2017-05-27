@@ -1,0 +1,75 @@
+    .none{
+        display: none;
+    }
+
+    .layer_content{
+        width: 400px;
+        height: 200px;
+        position: fixed;
+        z-index: 10;
+        right: 0;
+        bottom:0;
+    }
+
+
+    .layer_content .header{
+        position: relative;
+        padding: 10px;
+        background-color: #fd657a;
+        text-align: left;
+        color: #FFFFff;
+
+    }
+
+    .layer_content .header div{
+        display: inline-block;
+    }
+
+    .layer_content .header .cancel{
+        position: absolute;
+        right: 10px;
+        top: 0;
+        cursor: pointer;
+        font-size: 20px;
+    }
+    .layer_content2{
+        position: relative;
+        background-color: #FFFFff;
+        height: 100px;
+        text-align: center;
+        line-height: 100px;
+    }
+
+    .t_foot{
+        position: relative;
+        padding: 10px;
+        text-align: center;
+        background-color: #FFFFff;
+    }
+    .t_foot .btn{
+        display: inline-block;
+        font-weight: 400;
+        text-align: center;
+        cursor: pointer;
+        line-height: 1.5;
+        width: 80px;
+        padding: 5px;
+        margin: 0 10px;
+    }
+
+    .t_foot .cancel_btn{
+        color: #333;
+        background-color: #f0f0f0;
+        border-color: #dddddd;
+    }
+
+    .t_foot .sure_btn{
+        color: #FFFFff;
+        background-color: #fd657a;
+        border-color: #e65c6e;
+    }
+
+    .t_foot .btn a{
+        text-decoration: none;
+        color: #FFFFff;
+    }

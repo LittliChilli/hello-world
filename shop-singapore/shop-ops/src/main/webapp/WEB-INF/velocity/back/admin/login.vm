@@ -1,0 +1,37 @@
+#set($title="登录")
+
+#parse("./back/inc/header.vm")
+<body id="login">
+<div id="alert_tip" class="alert alert-danger" role="alert" style="display: none">
+    <a href="#" class="close" onclick="dismissalert()">
+        &times;
+    </a>
+
+    <div id="alert_message"></div>
+</div>
+
+<div class="login-logo">
+    <img src="/miao/imgs/logo.png"/>
+</div>
+
+<h2 class="form-heading">后台管理中心</h2>
+
+<div class="app-cam">
+    <form method="post" id="login_form">
+        <input type="text" class="text" name="loginName" id="loginName" placeholder="用户名">
+        <input type="password" name="loginPassward" id="loginPassward" placeholder="密码">
+
+        <div class="submit"><input type="submit" id="submit" value="登录"></div>
+        <ul class="new">
+            <li class="new_left"><a onclick="alert('请联系系统管理员重置密码！')">忘记密码？</a></li>
+            <div class="clearfix"></div>
+        </ul>
+    </form>
+</div>
+<div class="copy_layout login">
+    <p>Copyright &copy; 2016.美眉分期 All rights reserved.</p>
+</div>
+<script src="/miao/js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="/miao/js/admin/login.js"></script>
+</body>
+</html>

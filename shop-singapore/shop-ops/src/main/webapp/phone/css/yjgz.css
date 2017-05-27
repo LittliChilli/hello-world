@@ -1,0 +1,33 @@
+body {
+    background-color: rgba(248, 66, 67, 1);
+}
+
+#text-one {
+    margin: 6.08333333rem 0 3rem 0;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+}
+
+#img-one {
+    width: 12.95833333333rem;
+    margin: 0 auto;
+}
+
+.img {
+    width: 100%;
+    display: block;
+}
+
+#text-two {
+    text-align: center;
+    width: 100%;
+    color: #fff;
+    margin-top: 2rem;
+}
+
+#img-two {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link href="http://apps.bdimg.com/libs/fontawesome/4.4.0/css/font-awesome.min.css">
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+    .not-found-standard-text{
+        color: rgb(102,102,102);
+        margin: 0.5rem;
+    }
+    .not-found-grey-text {
+        color: rgb(188,188,188);
+        font-size: 1.2rem;
+    }
+    .not-found-pink-text{
+        color: rgb(253,143,163);
+        font-size: 1.2rem;
+    }
+
+</style>
+
+<div class="container" style="text-align: center">
+
+    <div style="margin-top: 30%">
+        <img src="/img.png" style="width:40%;">
+    </div>
+
+    <div class="not-found-standard-text">
+        啊？好像迷路了！
+    </div>
+    <div class="not-found-standard-text">
+        美丽不能丢，赶快找回吧
+    </div>
+
+    <div style="font-size: 1rem;margin-top: 1.5rem">
+        <span class="not-found-pink-text" id="time">3秒</span>
+        <span class="not-found-grey-text">自动跳回首页</span>
+        <a class="not-found-pink-text" href="" onclick="javascript :history.back(-1);">返回上一页</a>
+    </div>
+
+</div>
+
+<script>
+
+    $(document).ready(function (){
+        var i = 3;
+        var timer =  function() {setTimeout(function() {
+            i--;
+            document.getElementById("time").innerHTML = i + '秒';
+            if (i>0){
+                timer();
+            }else {
+                window.location.href = "/"
+            }
+        },1000)};
+        timer();
+    });
+
+</script>
+</body>
+</html>

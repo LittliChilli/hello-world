@@ -1,0 +1,94 @@
+#set($totalItem = $!page.totalItem)
+#set($pageCount = $!page.totalPage)
+#set($currentPage = $!page.currentPage)
+
+<div class="nav_page mt10">
+    <a href="javascript:toQueryPageSubmit(1);">首页</a>
+    <a id="prevPage">上一页</a>
+    <i>第 $currentPage 页，共 #if($pageCount==0) 1 #else $pageCount 页#end</i>
+    <a id="nextPage">下一页</a>
+    <a href="javascript:toQueryPageSubmit($pageCount);">尾页</a>
+    <span class="ml10">转到</span>
+    <input type="text" class="input_go"><span>页</span>
+    <input type="button" class="btn_go btn_ok ml5" value="GO" #if(!$totalItem || $totalItem == 0)
+           disabled="disabled" #end>
+</div>
+
+<script language="javascript">
+    $(function () {
+        var totalItem = '$!page.totalItem';
+        var currentPage = '$!page.currentPage';
+        var pageCount = '$!page.totalPage';
+
+        if (pageCount == 0) {
+            pageCount = 1;
+        }
+        if (!currentPage || totalItem == 0) {
+            currentPage = 1;
+        }
+
+        if (currentPage != 1) {
+            $("#prevPage").attr("style", "cursor:pointer");
+        } else {
+            $("#prevPage").css("color", "gray");
+        }
+
+        if (currentPage != pageCount) {
+            $("#nextPage").attr("style", "cursor:pointer");
+        } else {
+            $("#nextPage").css("color", "gray");
+        }
+
+        <!--上一页-->
+        $("#prevPage").click(function () {
+            if (currentPage != 1) {
+                return toQueryPageSubmit(currentPage - 1);
+            }
+        });
+
+        <!--下一页 -->
+        $("#nextPage").click(function () {
+            if (currentPage != pageCount) {
+                return toQueryPageSubmit(parseInt(currentPage) + 1);
+            }
+        });
+
+
+        $(".btn_go").click(function () {
+            var page = $(".input_go").val();
+            var patm = /^\d*$/;
+            if (!patm.test(page)) {
+                alert("输入的页数有误");
+                $(".input_go").val("");
+                return false;
+            }
+            if (parseInt(page) > parseInt(pageCount)) {
+                return toQueryPageSubmit(pageCount);
+            }
+            return toQueryPageSubmit(page);
+        });
+
+    });
+
+    function toQueryPageSubmit(currentPage) {
+        $("#currentPage").val(currentPage);
+
+        $("#" + $("#formId").val()).submit();
+    }
+
+    $(function () {
+        $(".fa-search").click(function () {
+            $("#currentPage").val(1);
+            $('#page_form_search').submit();
+        });
+    })
+	
+</script>
+            
+           
+   
+ 
+    	
+
+    
+  
